@@ -1,0 +1,29 @@
+angular
+  .module('adminNext',
+  [
+    'ngRoute',
+    'ngMessages',
+    'ngAnimate',
+    'brMaterial',
+    'jsonApiManager'
+  ])
+  .config(configApp);
+
+
+
+
+configApp.$inject = ['$routeProvider'];
+function configApp($routeProvider) {
+  $routeProvider
+    // .when('/', {
+    //   templateUrl: 'sections/home/home.html',
+    //   controller: 'HomeController',
+    //   controllerAs: 'vm'
+    // })
+    // .when('/scope', {
+    //   templateUrl: 'sections/scopeSettings/scope.html',
+    //   controller: 'ScopeController',
+    //   controllerAs: 'vm'
+    // })
+    .otherwise('/');
+}
