@@ -19,6 +19,22 @@
   </head>
 
   <body>
-    Hello World
+    <top-bar></top-bar>
+    <div layout="row" style="height: 100%;">
+      <br-side-content br-is-locked-open="$brMedia('md')" class="br-nav-side-content br-side-content-left" br-component-id="navMenuSideContent" br-width="220">
+        <nav-menu></nav-menu>
+      </br-side-content>
+
+
+      <div flex style="padding-top: 40px;">
+        <br-content br-auto-height style="width: 100%;">
+          <div>
+            <br-expansion-card-manager flex br-auto-expand br-component-id="cardManager"></br-expansion-card-manager>
+          </div>
+
+          <div flex style="padding-left: 8px; padding-right: 8px;" ng-view></div>
+        </br-content>
+      </div>
+    </div>
   </body>
 </html>

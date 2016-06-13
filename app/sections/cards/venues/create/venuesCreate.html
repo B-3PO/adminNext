@@ -1,0 +1,41 @@
+<br-expansion-card>
+
+
+  <br-card-collapsed>
+    <h4>Create Venue</h4>
+  </br-card-collapsed>
+
+
+
+  <br-card-expanded>
+    <br-subheader br-no-style>
+      <div class="card-header">
+        <div>
+          <h2>Create Venue</h2>
+          <div class="sub-h2"><b>organization</b> {{vm.organization.name}}</div>
+        </div>
+        <div flex></div>
+
+        <div layout="row">
+          <br-button class="br-warn br-raised" ng-click="$card.remove()">Cancel</br-button>
+          <br-button class="br-accent br-raised" ng-click="vm.save()" ng-disabled="venueForm.$invalid">Save</br-button>
+        </div>
+      </div>
+    </br-subheader>
+
+
+    <br-card-content>
+      <form name="venueForm">
+        <br-input class="br-fill">
+          <label>Venue Name</label>
+          <input name="orgName" ng-model="vm.venue.name" placeholder="Enter Name" required />
+          <div ng-messages="venueForm.orgName.$error">
+            <div ng-message="required">Name Required</div>
+          </div>
+        </br-input>
+      </form>
+    </br-card-content>
+  </br-card-expanded>
+
+
+</br-expansion-card>

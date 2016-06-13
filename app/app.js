@@ -4,6 +4,7 @@ angular
     'ngRoute',
     'ngMessages',
     'ngAnimate',
+    'angular-jwt',
     'brMaterial',
     'jsonApiManager'
   ])
@@ -12,18 +13,30 @@ angular
 
 
 
-configApp.$inject = ['$routeProvider'];
-function configApp($routeProvider) {
+configApp.$inject = ['$routeProvider', 'jwtInterceptorProvider', '$httpProvider', 'jsonApiManagerProvider'];
+function configApp($routeProvider, jwtInterceptorProvider, $httpProvider, jsonApiManagerProvider) {
+  jwtInterceptorProvider.tokenGetter = ['authService', function(authService) {
+    return authService.getToken();
+  }];
+  $httpProvider.interceptors.push('jwtInterceptor');
+
+  jsonApiManagerProvider.baseUrl = 'api/';
+
+
   $routeProvider
-    // .when('/', {
-    //   templateUrl: 'sections/home/home.html',
-    //   controller: 'HomeController',
-    //   controllerAs: 'vm'
-    // })
-    // .when('/scope', {
-    //   templateUrl: 'sections/scopeSettings/scope.html',
-    //   controller: 'ScopeController',
-    //   controllerAs: 'vm'
-    // })
+    .when('/', {
+      templateUrl: 'sections/home/home.html',
+      controller: 'HomeController',
+      controllerAs: 'vm'
+    })
+    .when('/login', {
+      templateUrl: 'sections/auth/login/login.html',
+      controller: 'LoginController',
+      controllerAs: 'vm'
+    })
+    .when('/logout', {
+      template: ' ',
+      controller: 'LogoutController'
+    })
     .otherwise('/');
 }

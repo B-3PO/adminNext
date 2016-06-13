@@ -1,0 +1,159 @@
+<br-expansion-card>
+
+
+  <br-card-collapsed>
+    <h4>Edit Venue</h4>
+  </br-card-collapsed>
+
+
+
+
+  <br-card-expanded>
+    <br-subheader br-no-style>
+      <div class="card-header">
+        <h2>Edit Venue</h2>
+        <div flex></div>
+
+        <div layout="row">
+          <br-button class="br-warn br-raised" ng-click="vm.cancel()">Cancel</br-button>
+          <br-button class="br-accent br-raised" ng-click="vm.save()" ng-disabled="venueForm.$invalid">Save</br-button>
+        </div>
+      </div>
+    </br-subheader>
+
+
+    <br-card-content>
+      <form name="venueForm">
+        <div layout="column">
+
+          <div layout="row" layout-wrap>
+            <br-input flex>
+              <label>Name</label>
+              <input name="venueName" ng-model="vm.venue.name" required />
+              <div ng-messages="venueForm.venueName.$error">
+                <div ng-message="required">Required</div>
+              </div>
+            </br-input>
+
+            <br-input flex>
+              <label>Administrative Emails</label>
+              <input name="adminEmail" ng-model="vm.venue.administrative_emails" placeholder="Currently Disabled" disabled="true"/>
+            </br-input>
+          </div>
+
+
+          <div layout="row" layout-wrap>
+            <br-input flex>
+              <label>City</label>
+              <input name="venueCity" ng-model="vm.venue.city" required />
+              <div ng-messages="venueForm.venueCity.$error">
+                <div ng-message="required">Required</div>
+              </div>
+            </br-input>
+
+            <br-select flex>
+              <label>State</label>
+              <br-select-menu ng-model="vm.venue.state" placeholder="Select State" required>
+                <br-select-header>
+                  <input type="search" ng-model="vm.itemSelectFilter" placeholder="Search..." />
+                </br-select-header>
+
+                <br-option ng-value="state.abbreviation" ng-repeat="state in vm.states | filter:vm.itemSelectFilter">{{state.name}}</br-option>
+              </br-select-menu>
+            </br-select>
+          </div>
+
+
+          <div layout="row" layout-wrap>
+            <br-input flex style="max-width: 280px;">
+              <label>GoodData Project ID</label>
+              <input name="venueGoodData" ng-model="vm.venue.good_data_project" placeholder="Enter Good Data Project ID" />
+            </br-input>
+
+            <!-- spacer -->
+            <div></div>
+          </div>
+
+
+
+
+          <div class="divider"></div>
+          <h4>Venue General Settings</h4>
+
+
+          <div layout="row" layout-wrap>
+            <div layout="column" flex>
+              <br-checkbox class="br-primary" ng-model="vm.venue.active">Active</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.show_in_app">Enable Consumer App</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.auto_fulfill_access_orders">Skip Pending Order Screen in Access?</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.has_suites">Enable Suites Module</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.audit_log_enabled">Enable Event Audit Logging</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.round_cash_to_nearest_nickel">Enable Nickel rounding for cash payments</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.accept_tips_for_inseat">Enable tips for inseat</br-checkbox>
+
+              <br-checkbox class="br-primary" ng-model="vm.venue.server_station_auto_logout_enabled">Enable auto-logout of order takers</br-checkbox>
+
+              <div layout="row" style="margin-top: -34px; padding-left: 28px;">
+                <br-input style="max-width: 80px;">
+                  <input type="number" name="venueLogoutTime" ng-model="vm.venue.server_station_auto_logout_timeout" placeholder="Seconds" ng-readonly="!vm.venue.server_station_auto_logout_enabled"/>
+                </br-input>
+              </div>
+            </div>
+
+
+
+            <div layout="column" flex>
+              <br-input flex style="max-width: 280px;">
+                <label>Signature Legal Statement</label>
+                <textarea name="venueLegalStatement" ng-model="vm.venue.signature_legalese" placeholder="Signature Legal Statement"></textarea>
+              </br-input>
+
+              <br-input flex style="max-width: 280px;">
+                <label>Receipt Footer Messasge</label>
+                <textarea name="venueReceiptFooter" ng-model="vm.venue.receipt_footer_text" placeholder="Receipt Footer Message"></textarea>
+              </br-input>
+            </div>
+          </div>
+
+
+
+
+          <div class="divider"></div>
+
+          <div layout="row" layout-wrap>
+            <div layout="column" flex style="min-width: 180px;">
+              <div layout="row" style="padding-bottom: 16px;">
+                <h4 flex>Venue Security Settings</h4>
+              </div>
+
+              <br-checkbox class="br-primary" ng-model="vm.venue.allow_print_order_taker_tips_report">Allow OT to Print Sales Report From Tablet</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.enable_custom_discounts">Enable Custom Discounts</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.allow_manual_credit_card_entry">Enable Manual Card Entry</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.cash_drawer_controls_enabled">Enabled Cash Drawer Controls</br-checkbox>
+
+              <br-input flex style="max-width: 280px;">
+                <label>Offline Credit Card Amount Limit</label>
+                <input type="number" name="venueReceiptFooter" ng-model="vm.venue.offline_credit_threshold" />
+              </br-input>
+            </div>
+
+            <div layout="column" flex style="min-width: 180px;">
+              <div layout="row" style="padding-bottom: 16px;">
+                <h4 flex>Require Manager PIN for Security</h4>
+              </div>
+              <br-checkbox class="br-primary" ng-model="vm.venue.manager_pin_for_edit_tip_required">Editing Tips</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.require_pin_to_view_all_orders">Viewing All Orders</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.manager_pin_for_void_required">Voiding Orders</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.require_pin_for_discount">Apply Discounts</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.manager_pin_for_clear_cart">Clearing Cart</br-checkbox>
+              <br-checkbox class="br-primary" ng-model="vm.venue.manager_pin_for_standsheet">Digital Standsheets</br-checkbox>
+            </div>
+          </div>
+        </div>
+      </form>
+    </br-card-content>
+  </br-card-expanded>
+
+
+
+</br-expansion-card>

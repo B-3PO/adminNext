@@ -1,0 +1,41 @@
+<div class="nav-menu">
+  <div class="navSearch" layout="row" layout-align="start center">
+    <br-icon br-color="#677898" br-font-icon="search"></br-icon>
+    <input flex type="search" br-no-style ng-model="vm.search" ng-change="vm.searchChange()" placeholder="Search"/>
+  </div>
+
+  <div ng-repeat="item in vm.menu">
+
+    <div class="nav-menu-item" ng-if="item.url !== undefined">
+
+      <br-button ng-if="!item.action" ng-href="#/{{item.url}}">
+        <br-icon ng-if="item.icon" br-font-icon="{{item.icon}}"></br-icon>
+        {{item.label}}
+      </br-button>
+
+
+      <br-button ng-if="item.action" ng-href="#/{{item.url}}">
+        <div layout="row" class="nav-item-action-container">
+          <br-icon ng-if="item.icon" br-font-icon="{{item.icon}}"></br-icon>
+          <div layout="column">
+            <div class="nav-item-action-label">{{item.action}}</div>
+            <div class="nav-item-action-label-title">{{item.label}}</div>
+          </div>
+        </div>
+      </br-button>
+    </div>
+
+    <br-expander ng-if="item.sub !== undefined">
+      <br-expander-header>
+        {{item.label}}
+      </br-expander-header>
+
+      <br-expander-content>
+        <br-button ng-repeat="sub in item.sub" ng-href="#/{{sub.url}}">
+          {{sub.label}}
+        </br-button>
+      </br-expander-content>
+    </br-expander>
+
+  </div>
+</div>

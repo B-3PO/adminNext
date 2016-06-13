@@ -1,0 +1,65 @@
+<br-expansion-card>
+
+
+  <br-card-collapsed>
+    <div class="orgcard-title">{{vm.organization.name}}</div>
+    <div class="orgcard-hint">Edit organization</div>
+  </br-card-collapsed>
+
+
+
+
+  <br-card-expanded>
+    <br-subheader br-no-style>
+      <div class="card-header">
+        <h2>Edit Organization</h2>
+        <div flex></div>
+
+        <div layout="row">
+          <br-button class="br-warn br-raised" ng-click="$card.remove()">Cancel</br-button>
+          <br-button class="br-accent br-raised" ng-click="vm.save()" ng-disabled="orgForm.$invalid">Save</br-button>
+        </div>
+      </div>
+    </br-subheader>
+
+
+    <br-card-content>
+      <form name="orgForm">
+        <br-input class="br-fill">
+          <label>Organization Name</label>
+          <input name="orgName" ng-model="vm.organization.name" placeholder="Enter Name" required />
+          <div ng-messages="orgForm.orgName.$error">
+            <div ng-message="required">Name Required</div>
+          </div>
+        </br-input>
+      </form>
+
+
+
+
+      <h4>Venues</h4>
+
+      <div layout="row" class="filter-bar">
+        <br-icon br-font-icon="search" style="line-height: 53px; padding-left: 12px; "></br-icon>
+        <input flex type="search" br-no-style ng-model="vm.venueFilter" placeholder="Search..." />
+
+        <br-button class="br-accent br-raised" ng-click="vm.createVenue();" ng-disabled="vm.loaded === false"><br-icon br-font-icon="add"></br-icon>Venue</br-button>
+      </div>
+
+
+      <br-list>
+        <br-item ng-repeat="venue in vm.organization.venues">
+          <br-item-content class="br-fill">
+            <div layout="row" layout-align="start center">
+              <div class="br-item-title">{{venue.name}}</div>
+              <div flex></div>
+              <br-button class="br-primary" ng-click="vm.editVenue(venue.id)"><br-icon br-font-icon="edit"></br-icon>Edit</br-button>
+            </div>
+          </br-item-content>
+        </br-item>
+      </br-list>
+    </br-card-content>
+  </br-card-expanded>
+
+
+</br-expansion-card>

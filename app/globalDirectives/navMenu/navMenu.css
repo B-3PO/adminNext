@@ -1,0 +1,136 @@
+nav-menu {
+  display: block;
+  /*height: 100%;*/
+}
+
+br-side-content.nav-side-contner {
+  min-height: 100%;
+  /*background: #364051 !important;*/
+}
+
+
+.navSearch {
+  padding-left: 18px;
+  padding-right: 12px;
+  background: #3f495c;
+}
+
+.navSearch input {
+  background: #3f495c;
+  outline: none;
+  line-height: 48px;
+  border: none;
+  color: #EEE;
+}
+
+.navSearch input::placeholder {
+  color: #778bb0;
+}
+
+.nav-menu {
+  padding-top: 40px;
+  width: 220px;
+  min-height: 100%;
+  background: #364051;
+  z-index: 299;
+  overflow-x: hidden;
+}
+
+.br-nav-side-content.br-default-theme {
+  background: #364051 !important;
+}
+
+.nav-menu .br-button {
+  width: 100%;
+  color: #b3b3b3 !important;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+  padding-left: 12px;
+  width: 100%;
+  text-align: left;
+  line-height: 48px;
+  border-radius: 0;
+  border-left: 4px solid transparent;
+  transition: border 0.56s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+
+.nav-menu .nav-item-action-container {
+  height: 48px;
+  padding-top: 10px;
+}
+
+.nav-menu .nav-item-action-container br-icon {
+  margin-right: 6px !important;
+  margin-top: -2px !important;
+}
+
+.nav-menu .nav-item-action-label {
+  color: #B5B5B5 !important;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: left;
+  margin: 0;
+  line-height: 12px;
+}
+
+.nav-menu .nav-item-action-label-title {
+  color: #b3b3b3 !important;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+.nav-menu-item.nav-item-action .br-button{
+  padding-top: 8px;
+  line-height: 37px;
+}
+
+.nav-menu .br-button:not(:hover) {
+  background: #364051 !important;
+}
+
+.nav-menu .br-button.nav-link-active {
+  border-left: 4px solid #5db34d;
+}
+
+.nav-menu br-expander-header {
+  color: #b3b3b3;
+  padding-left: 12px;
+  background: #364051;
+  border-left: 4px solid transparent;
+}
+
+.nav-menu br-expander-content .br-button:not(:hover) {
+  background: inherit !important;
+}
+
+.nav-menu .nav-menu-item {
+  border-bottom: 1px solid #495361;
+  background: #323a48;
+  display: flex;
+}
+
+
+.nav-menu br-expander {
+  width: 100%;
+}
+
+.nav-menu .br-expander {
+  border-bottom: 1px solid #495361 !important;
+}
+
+.nav-menu .br-expander br-expander-content {
+  border: none !important;
+}
+
+.nav-menu br-expander-header br-icon {
+  margin-right: 9px;
+}
+
+.nav-menu .nav-menu-item br-icon {
+  color: #b3b3b3 !important;
+  padding-right: 6px;
+}
