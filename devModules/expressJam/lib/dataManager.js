@@ -17,7 +17,6 @@ exports.addRelationship = function (req, res, resource) {
   var property = req.params.property;
   var data = req.body.data;
   var structure = structureGetter.getStructure(resource, property);
-
   query.addRelationship(structure, data, parentId, property, function (status) {
     res.status(status).end();
   });

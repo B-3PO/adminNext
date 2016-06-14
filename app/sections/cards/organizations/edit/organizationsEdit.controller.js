@@ -14,7 +14,6 @@ function OrganizationsEditController($scope, $brExpansionCardManager, $timeout, 
   organizationsService.bind(vm, 'organization', 'organizations', organizationId);
   organizationsService.get();
 
-
   vm.save = save;
   vm.createVenue = createVenue;
   vm.editVenue = editVenue;

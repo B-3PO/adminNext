@@ -11,7 +11,6 @@ function VenuesEditController($scope, $brExpansionCardManager, organizationsServ
   organizationsService.bind(vm, 'venue', 'venues', venueId);
   organizationsService.get();
 
-
   vm.states = US_STATES;
 
   vm.save = save;

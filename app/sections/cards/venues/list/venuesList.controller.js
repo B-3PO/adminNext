@@ -8,7 +8,13 @@ function VenuesListController($scope, $brExpansionCardManager, organizationsServ
   var vm = this;
 
   organizationsService.registerScope($scope, [vm]);
-  organizationsService.bind(vm, 'organization', 'organizations', organizationId);
+  if (organizationId !== false) {
+    organizationsService.bind(vm, 'organization', 'organizations', organizationId);
+  } else {
+    vm.organization = {}
+    organizationsService.bind(vm.organization, 'venues', 'venues');
+  }
+  console.log(organizationId);
   organizationsService.get();
 
 

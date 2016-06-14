@@ -40,18 +40,18 @@ function get(user, term, callback) {
       return;
     }
 
-    callback(undefined, formatData(rows));
+    callback(undefined, formatData(rows, term));
   });
 }
 
 
 
-function formatData(rows) {
+function formatData(rows, term) {
   var dataByType = {};
 
   var row = rows.pop();
   while (row !== undefined) {
-    addRowByType(dataByType, formatTypeRow(row));
+    addRowByType(dataByType, formatTypeRow(row, term));
     row = rows.pop();
   }
 
@@ -78,14 +78,20 @@ function addRowByType(typeObj, typeRow) {
 }
 
 
-function formatTypeRow(row) {
+function formatTypeRow(row, term) {
   var rowObj = {};
   var keys = Object.keys(row);
   var key = keys.pop();
   var rowByType = {};
+  var filtered = {};
   var attrObj;
 
   while (key !== undefined) {
+    if (row[key] === null) {
+      key = keys.pop();
+      continue;
+    }
+
     attrObj = getAttrFromRow(key);
 
     if (rowByType[attrObj.type] === undefined) {
@@ -95,6 +101,13 @@ function formatTypeRow(row) {
     rowByType[attrObj.type][attrObj.attr] = row[key];
     key = keys.pop();
   }
+
+  var reggie = new RegExp(term, "i");
+  Object.keys(rowByType).forEach(function (key) {
+    if (rowByType[key].name.search(reggie) === -1) {
+      delete rowByType[key];
+    }
+  });
 
   return rowByType;
 }
@@ -150,6 +163,7 @@ function getWheres(user, term) {
   var isVenuesId = user.venue_id !== undefined && user.venue_id !== '';
   var like = formatLike(term);
   var wheres = [];
+  var likes = [];
 
 
   if (isOrganizationsId === true && isVenuesId === true) {
@@ -158,13 +172,21 @@ function getWheres(user, term) {
   } else if (isOrganizationsId === true) {
     wheres.push('organizations.uuid = \'' + user.organization_id + '\'');
     if (like !== undefined) {
-      wheres.push('venues.name ' + like);
+      likes.push('organizations.name ' + like);
+      likes.push('venues.name ' + like);
     }
   } else if (isVenuesId === true) {
     wheres.push('venues.uuid = \'' + user.venue_id + '\'');
+    if (like !== undefined) {
+      likes.push('venues.name ' + like);
+    }
   }
 
   if (wheres.length === 0) { return ''; }
+  if (likes.length > 0) {
+    return ' where ' + wheres.join(' and ') + ' and ' + likes.join(' or ');
+  }
+
   return ' where ' + wheres.join(' and ');
 }
 

@@ -1,6 +1,7 @@
 angular
   .module('adminNext')
   .run(organizationsRegisterCards)
+  .run(organizationsMenuLinks)
   .config(organizationsConfig);
 
 
@@ -29,6 +30,61 @@ function organizationsConfig($routeProvider) {
         organizationCreate: function () { return false; }
       }
     });
+}
+
+
+
+organizationsMenuLinks.$inject = ['navMenuService'];
+function organizationsMenuLinks(navMenuService) {
+  navMenuService.addMainLinks([
+    {
+      order: 0,
+      label: 'Organizations',
+      url: 'organizations',
+      icon: 'turned_in',
+      admin: true,
+      organizationId: false
+    },
+    {
+      order: 0,
+      label: 'Organization',
+      url: 'organizations/:organizationId',
+      icon: 'turned_in',
+      organizationId: true,
+      venueId: false
+    }
+  ]);
+
+
+
+  navMenuService.addSearchLinks([
+    {
+      action: 'list',
+      label: 'Organizations',
+      url: 'organizations',
+      icon: 'list',
+      organizationId: false,
+      venueId: false,
+      admin: true
+    },
+    {
+      action: 'create',
+      label: 'Organizations',
+      url: 'organizations/create',
+      icon: 'add',
+      organizationId: false,
+      venueId: false,
+      admin: true
+    },
+    {
+      action: 'edit',
+      label: 'Organization',
+      url: 'organizations/:organizationId',
+      icon: 'edit',
+      organizationId: true,
+      venueId: false
+    }
+  ]);
 }
 
 
