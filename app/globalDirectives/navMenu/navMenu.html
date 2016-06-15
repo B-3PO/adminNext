@@ -25,14 +25,16 @@
       </br-button>
     </div>
 
-    <br-expander ng-if="item.sub !== undefined">
+    <br-expander ng-if="item.links !== undefined" br-open="item.links.length < 5">
       <br-expander-header>
+        <br-icon ng-if="item.icon" br-font-icon="{{item.icon}}"></br-icon>
         {{item.label}}
       </br-expander-header>
 
       <br-expander-content>
-        <br-button ng-repeat="sub in item.sub" ng-href="#/{{sub.url}}">
-          {{sub.label}}
+        <br-button ng-repeat="subLink in item.links" ng-href="#/{{subLink.url}}">
+          <br-icon ng-if="subLink.icon" br-font-icon="{{subLink.icon}}"></br-icon>
+          {{subLink.label}}
         </br-button>
       </br-expander-content>
     </br-expander>

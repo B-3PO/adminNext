@@ -1,17 +1,17 @@
 angular
-  .module('adminNext')
+  .module('adminNext.organizations')
   .controller('OrganizationsEditController', OrganizationsEditController);
 
 
 // TODO add ability to jump to locations list for organizations
 
 
-OrganizationsEditController.$inject = ['$scope', '$brExpansionCardManager', '$timeout', 'organizationsService', 'organizationId'];
-function OrganizationsEditController($scope, $brExpansionCardManager, $timeout, organizationsService, organizationId) {
+OrganizationsEditController.$inject = ['$scope', '$brExpansionCardManager', '$timeout', 'organizationsService', 'organizationsId'];
+function OrganizationsEditController($scope, $brExpansionCardManager, $timeout, organizationsService, organizationsId) {
   var vm = this;
 
   organizationsService.registerScope($scope, [vm]);
-  organizationsService.bind(vm, 'organization', 'organizations', organizationId);
+  organizationsService.bind(vm, 'organization', 'organizations', organizationsId);
   organizationsService.get();
 
   vm.save = save;
@@ -21,8 +21,8 @@ function OrganizationsEditController($scope, $brExpansionCardManager, $timeout, 
   // temp fix becasue component is not registered yet
   $timeout(function () {
     $scope.$card.on('organizationChange', function (id) {
-      organizationId = id;
-      organizationsService.bind(vm, 'organization', 'organizations', organizationId);
+      organizationsId = id;
+      organizationsService.bind(vm, 'organization', 'organizations', organizationsId);
       $scope.$card.flash();
     });
   }, 0);
@@ -34,7 +34,7 @@ function OrganizationsEditController($scope, $brExpansionCardManager, $timeout, 
   }
 
   function createVenue() {
-    $brExpansionCardManager('cardManager').add('venuesCreate', {organizationId: organizationId, lockOrganization: false});
+    $brExpansionCardManager('cardManager').add('venuesCreate', {organizationsId: organizationsId, lockOrganization: false});
   }
 
   function editVenue(id) {

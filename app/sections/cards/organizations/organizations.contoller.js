@@ -3,9 +3,10 @@ angular
   .controller('OrganizationsController', OrganizationsController);
 
 
-OrganizationsController.$inject = ['$brExpansionCardManager', 'organizationId', 'organizationCreate'];
-function OrganizationsController($brExpansionCardManager, organizationId, organizationCreate) {
+OrganizationsController.$inject = ['$brExpansionCardManager', 'scopeIds', 'organizationCreate'];
+function OrganizationsController($brExpansionCardManager, scopeIds, organizationCreate) {
   var vm = this;
+  var organizationsId = scopeIds.get().organizationsId;
 
   var cardManager = $brExpansionCardManager('cardManager');
   cardManager.removeAll();
@@ -13,9 +14,9 @@ function OrganizationsController($brExpansionCardManager, organizationId, organi
 
   if (organizationCreate === true) {
     cardManager.add('organizationsCreate');
-  } else if (organizationId !== false) {
-    cardManager.add('organizationsEdit', {organizationId: organizationId});
+  } else if (organizationsId) {
+    cardManager.add('organizationsEdit', {organizationsId: organizationsId});
   } else {
-    cardManager.add('organizationsList');
+    cardManager.add('organizationsList', {});
   }
 }

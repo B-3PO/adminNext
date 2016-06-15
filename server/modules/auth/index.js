@@ -41,12 +41,18 @@ function findUser(email, password, callback) {
       return;
     }
 
+    var scope = rows[0].admin === 1 ? 'admin' : '';
+    scope = rows[0].organization_id ? 'organizations' : scope;
+    scope = rows[0].venue_id ? 'venues' : scope;
+
     var user = {
       first: rows[0].first,
       last: rows[0].last,
-      admin: rows[0].admin === 1,
-      organization_id: rows[0].organization_id,
-      venue_id: rows[0].venue_id
+      scope: scope,
+      ids: {
+        organizationsId: rows[0].organization_id,
+        venuesId: rows[0].venue_id
+      }
     };
     callback(undefined, user);
   });

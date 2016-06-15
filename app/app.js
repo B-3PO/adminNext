@@ -6,7 +6,11 @@ angular
     'ngAnimate',
     'angular-jwt',
     'brMaterial',
-    'jsonApiManager'
+    'jsonApiManager',
+
+    'adminNext.organizations',
+    'adminNext.venues',
+    'adminNext.locations'
   ])
   .config(configApp);
 

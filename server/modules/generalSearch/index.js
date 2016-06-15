@@ -19,9 +19,19 @@ var types = [
   {
     type: 'venues',
     table: 'venues',
+    parentTable: 'organizations',
     attrs: {
       venuesuuid: 'uuid',
       venuesname: 'name'
+    }
+  },
+  {
+    type: 'locations',
+    table: 'locations',
+    parentTable: 'locations',
+    attrs: {
+      locationsuuid: 'uuid',
+      locationsuuid: 'name'
     }
   }
 ];
@@ -32,8 +42,9 @@ var types = [
 function get(user, term, callback) {
   var query = 'select ' + getAttrs() + ' from organizations';
   query += ' left join venues on venues.organizations_id=organizations.id';
+  query += ' left join locations on locations.venues_id=venues.id';
   query += getWheres(user, term);
-
+  
   getData(query, function (error, rows) {
     if (error !== undefined) {
       callback(error);
@@ -159,24 +170,24 @@ function getAttrs() {
 
 
 function getWheres(user, term) {
-  var isOrganizationsId = user.organization_id !== undefined && user.organization_id !== '';
-  var isVenuesId = user.venue_id !== undefined && user.venue_id !== '';
+  var isOrganizationsId = user.ids.organizationsId !== undefined && user.ids.organizationsId !== '';
+  var isVenuesId = user.ids.venuesId !== undefined && user.ids.venuesId !== '';
   var like = formatLike(term);
   var wheres = [];
   var likes = [];
 
 
   if (isOrganizationsId === true && isVenuesId === true) {
-    wheres.push('organizations.uuid = \'' + user.organization_id + '\'');
-    wheres.push('venues.uuid = \'' + user.venue_id + '\'');
+    wheres.push('organizations.uuid = \'' + user.ids.organizationsId + '\'');
+    wheres.push('venues.uuid = \'' + user.ids.venuesId + '\'');
   } else if (isOrganizationsId === true) {
-    wheres.push('organizations.uuid = \'' + user.organization_id + '\'');
+    wheres.push('organizations.uuid = \'' + user.ids.organizationsId + '\'');
     if (like !== undefined) {
       likes.push('organizations.name ' + like);
       likes.push('venues.name ' + like);
     }
   } else if (isVenuesId === true) {
-    wheres.push('venues.uuid = \'' + user.venue_id + '\'');
+    wheres.push('venues.uuid = \'' + user.ids.venuesId + '\'');
     if (like !== undefined) {
       likes.push('venues.name ' + like);
     }

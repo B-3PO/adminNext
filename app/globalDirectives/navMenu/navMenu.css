@@ -127,6 +127,7 @@ br-side-content.nav-side-contner {
 }
 
 .nav-menu br-expander-header br-icon {
+  color: #b3b3b3 !important;
   margin-right: 9px;
 }
 

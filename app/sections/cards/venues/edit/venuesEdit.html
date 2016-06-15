@@ -2,7 +2,10 @@
 
 
   <br-card-collapsed>
-    <h4>Edit Venue</h4>
+    <div class="orgcard-title">Edit Venue</div>
+    <div layout="row">
+      <div class="orgcard-hint"><b>organization</b> {{vm.organization.name}}</div>
+    </div>
   </br-card-collapsed>
 
 
@@ -11,7 +14,10 @@
   <br-card-expanded>
     <br-subheader br-no-style>
       <div class="card-header">
-        <h2>Edit Venue</h2>
+        <div>
+          <h2>Edit Venue</h2>
+          <div class="sub-h2"><b>organization</b> {{vm.organization.name}}</div>
+        </div>
         <div flex></div>
 
         <div layout="row">

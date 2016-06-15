@@ -1,5 +1,5 @@
 angular
-  .module('adminNext')
+  .module('adminNext.organizations')
   .controller('OrganizationsListController', OrganizationsListController);
 
 

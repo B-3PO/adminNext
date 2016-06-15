@@ -1,0 +1,56 @@
+<br-expansion-card>
+
+  <br-card-collapsed>
+    <div class="orgcard-title">Edit Location</div>
+    <div layout="row">
+      <div class="orgcard-hint"><b>venue</b> {{vm.venue.name}}</div>
+    </div>
+  </br-card-collapsed>
+
+
+
+  <br-card-expanded>
+    <br-subheader br-no-style>
+      <div class="card-header">
+        <div>
+          <h2>Edit Location</h2>
+          <div class="sub-h2"><b>venue</b> {{vm.venue.name}}</div>
+        </div>
+        <div flex></div>
+
+        <div layout="row">
+          <br-button class="br-warn br-raised" ng-click="vm.cancel()">Cancel</br-button>
+          <br-button class="br-accent br-raised" ng-click="vm.save()" ng-disabled="form.$invalid">Save</br-button>
+        </div>
+      </div>
+    </br-subheader>
+
+
+    <br-card-content>
+      <form name="form">
+        <div layout="row" layout-wrap>
+          <br-input flex class="br-fill">
+            <label>Location Name</label>
+            <input name="name" ng-model="vm.location.name" placeholder="Enter Name" required />
+            <div ng-messages="form.name.$error">
+              <div ng-message="required">Name Required</div>
+            </div>
+          </br-input>
+
+          <br-select flex>
+            <label>Type</label>
+            <br-select-menu name="type" ng-model="vm.location.type" placeholder="Select Type">
+              <br-option ng-value="type" ng-repeat="type in vm.types">{{type}}</br-option>
+            </br-select-menu>
+          </br-select>
+        </div>
+
+        <br-input class="br-fill">
+          <label>Location Description</label>
+          <textarea name="description" ng-model="vm.location.description" placeholder="Enter Description"></textarea>
+        </br-input>
+      </form>
+    </br-card-content>
+  </br-card-expanded>
+
+</br-expansion-card>

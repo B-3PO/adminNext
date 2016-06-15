@@ -3,33 +3,36 @@ angular
   .controller('VenuesController', VenuesController);
 
 
-VenuesController.$inject = ['$brExpansionCardManager', 'organizationId', 'venueId', 'venuesCreate', 'organizationScope'];
-function VenuesController($brExpansionCardManager, organizationId, venueId, venuesCreate, organizationScope) {
+VenuesController.$inject = ['$brExpansionCardManager', 'venuesCreate', 'organizationScope', 'scopeIds'];
+function VenuesController($brExpansionCardManager, venuesCreate, organizationScope, scopeIds) {
   var vm = this;
+  var ids = scopeIds.get();
+  var organizationsId = ids.organizationsId;
+  var venuesId = ids.venuesId;
 
   var cardManager = $brExpansionCardManager('cardManager');
   cardManager.removeAll();
 
   if (organizationScope === false) {
-    if (venuesCreate === true && organizationId !== false) {
-      cardManager.add('venuesCreate', {organizationId: organizationId});
-    } else if (venuesCreate === false && venueId !== false) {
-        cardManager.add('venuesEdit', {venueId: venueId});
-    } else if (venuesCreate === false && organizationId !== false) {
-      cardManager.add('venuesList', {organizationId: organizationId});
+    if (venuesCreate === true && organizationsId !== undefined) {
+      cardManager.add('venuesCreate', {organizationsId: organizationsId});
+    } else if (venuesCreate === false && venuesId !== undefined) {
+        cardManager.add('venuesEdit', {venuesId: venuesId});
+    } else if (venuesCreate === false && organizationsId !== undefined) {
+      cardManager.add('venuesList', {organizationsId: organizationsId});
     } else {
-      cardManager.add('venuesList', {organizationId: false});
+      cardManager.add('venuesList', {organizationsId: undefined});
     }
 
-  } else if (organizationId !== false) {
-    cardManager.add('organizationsEdit', {organizationId: organizationId}, true);
+  } else if (organizationsId !== undefined) {
+    cardManager.add('organizationsEdit', {organizationsId: organizationsId}, true);
 
-    if (venuesCreate === true && organizationId !== false) {
-      cardManager.add('venuesCreate', {organizationId: organizationId});
-    } else if (venuesCreate === false && venueId !== false) {
-      cardManager.add('venuesEdit', {venueId: venueId});
-    } else if (venuesCreate === false && organizationId !== false) {
-      cardManager.add('venuesList', {organizationId: organizationId});
+    if (venuesCreate === true && organizationsId !== undefined) {
+      cardManager.add('venuesCreate', {organizationsId: organizationsId});
+    } else if (venuesCreate === false && venuesId !== undefined) {
+      cardManager.add('venuesEdit', {venuesId: venuesId});
+    } else if (venuesCreate === false && organizationsId !== undefined) {
+      cardManager.add('venuesList', {organizationsId: organizationsId});
     }
   }
 }

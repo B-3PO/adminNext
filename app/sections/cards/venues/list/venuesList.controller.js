@@ -3,18 +3,17 @@ angular
   .controller('VenuesListController', VenuesListController);
 
 
-VenuesListController.$inject = ['$scope', '$brExpansionCardManager', 'organizationsService', 'organizationId'];
-function VenuesListController($scope, $brExpansionCardManager, organizationsService, organizationId) {
+VenuesListController.$inject = ['$scope', '$brExpansionCardManager', 'organizationsService', 'organizationsId'];
+function VenuesListController($scope, $brExpansionCardManager, organizationsService, organizationsId) {
   var vm = this;
 
   organizationsService.registerScope($scope, [vm]);
-  if (organizationId !== false) {
-    organizationsService.bind(vm, 'organization', 'organizations', organizationId);
+  if (organizationsId !== undefined) {
+    organizationsService.bind(vm, 'organization', 'organizations', organizationsId);
   } else {
     vm.organization = {}
     organizationsService.bind(vm.organization, 'venues', 'venues');
   }
-  console.log(organizationId);
   organizationsService.get();
 
 
@@ -23,10 +22,10 @@ function VenuesListController($scope, $brExpansionCardManager, organizationsServ
 
 
   function createVenue() {
-    $brExpansionCardManager('cardManager').add('venuesCreate', {organizationId: organizationId});
+    $brExpansionCardManager('cardManager').add('venuesCreate', {organizationsId: organizationsId});
   }
 
   function editVenue(id) {
-    $brExpansionCardManager('cardManager').add('venuesEdit', {venueId: id});
+    $brExpansionCardManager('cardManager').add('venuesEdit', {venuesId: id});
   }
 }

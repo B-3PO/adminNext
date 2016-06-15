@@ -35,8 +35,8 @@ function rAFDecorator( $delegate ) {
 	return $delegate;
 }
 }());
-(function(){"use strict";(function(){
-angular.module("brMaterial").constant("$BR_THEME_CSS", "h1,h2,h3,h4,h5,h6{color:'{{font-default}}'}.br-select.br-THEME_NAME-theme .br-select-menu-content{color:transparent}.br-select.br-THEME_NAME-theme.br-select-has-value .br-select-menu-content{color:'{{font-default}}'}.br-select.br-THEME_NAME-theme .br-select-menu-content{border-color:'{{foreground-dark-4}}'}.br-select.br-THEME_NAME-theme.br-select-focused .br-select-menu-content{border-color:'{{primary-default}}'}.br-select.br-THEME_NAME-theme br-select-menu[disabled] .br-select-menu-content{color:'{{foreground-light-2}}';border-color:transparent;background-image:linear-gradient(90deg,'{{foreground-light-3}}' 0,'{{foreground-light-3}}' 33%,transparent 0)}.br-optiongroups-container.br-THEME_NAME-theme br-option{color:'{{font-default}}'}.br-optiongroups-container.br-THEME_NAME-theme .br-option-group-label{color:'{{font-light-2}}'}.br-select.br-THEME_NAME-theme .br-select-menu-label{color:'{{font-default}}'}.br-select.br-THEME_NAME-theme br-select-menu[disabled] .br-select-menu-label{color:'{{font-light-3}}'}.br-select.br-THEME_NAME-theme .br-select-menu-label._br-placeholder{color:'{{font-light-5}}'}.br-select.br-THEME_NAME-theme:not(.br-select-has-placeholder) .br-select-menu-label._br-placeholder{color:transparent}.br-optiongroups-container.br-THEME_NAME-theme br-option.br-select-checkbox-enabled[selected] .br-select-menu-icon{background-color:'{{primary-default}}'}.br-optiongroups-container.br-THEME_NAME-theme br-option[selected]{color:'{{primary-default}}'}.br-optiongroups-container.br-THEME_NAME-theme br-option .br-select-menu-icon{border-color:'{{background-3}}'}.br-optiongroups-container.br-THEME_NAME-theme br-option[selected] .br-select-menu-icon:after{border-color:'{{primary-light-6}}'}br-autocomplete.br-THEME_NAME-theme .br-autocomplete-container{background-color:'{{foreground-light-4}}';border-color:'{{foreground-light-1}}'}br-autocomplete.br-THEME_NAME-theme .br-autocomplete-repeater{background-color:'{{foreground-light-4}}';color:'{{font-default}}'}br-checkbox.br-THEME_NAME-theme .br-icon,input[type=checkbox]:not([br-no-style]){border-color:'{{background-2}}'}br-checkbox.br-THEME_NAME-theme.br-checked .br-icon,input[type=checkbox]:not([br-no-style]).ng-not-empty{background-color:'{{foreground-dark-4}}'}br-checkbox.br-THEME_NAME-theme.br-checked .br-icon:after,input[type=checkbox]:not([br-no-style]).ng-not-empty:after{border-color:'{{background-3}}'}br-checkbox.br-THEME_NAME-theme .br-label,input[type=checkbox]:not([br-no-style])+label{color:'{{font-default}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-primary .br-icon,input[type=checkbox]:not([br-no-style]).br-primary{border-color:'{{primary-light-2}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-primary.br-checked.br-focused .br-container:before,br-checkbox.br-THEME_NAME-theme:not([disabled]).br-primary.br-checked .br-icon,input[type=checkbox]:not([br-no-style]).br-primary.ng-not-empty{background-color:'{{primary-default}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-primary.br-checked .br-icon:after,input[type=checkbox]:not([br-no-style]).br-primary.ng-not-empty:after{border-color:'{{primary-light-5}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-accent .br-icon,input[type=checkbox]:not([br-no-style]).br-accent{border-color:'{{accent-light-2}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-accent.br-checked.br-focused .br-container:before,br-checkbox.br-THEME_NAME-theme:not([disabled]).br-accent.br-checked .br-icon,input[type=checkbox]:not([br-no-style]).br-accent.ng-not-empty{background-color:'{{accent-default}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-accent.br-checked .br-icon:after,input[type=checkbox]:not([br-no-style]).br-accent.ng-not-empty:after{border-color:'{{accent-light-5}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-warn .br-icon,input[type=checkbox]:not([br-no-style]).br-warn{border-color:'{{warn-light-2}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-warn.br-checked.br-focused:not([disabled]) .br-container:before,br-checkbox.br-THEME_NAME-theme:not([disabled]).br-warn.br-checked .br-icon,input[type=checkbox]:not([br-no-style]).br-warn.ng-not-empty{background-color:'{{warn-default}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-warn.br-checked .br-icon:after,input[type=checkbox]:not([br-no-style]).br-warn.ng-not-empty:after{border-color:'{{warn-light-5}}'}br-checkbox.br-THEME_NAME-theme[disabled] .br-icon,input[type=checkbox][disabled]:not([br-no-style]){border-color:'{{background-1}}'}br-checkbox.br-THEME_NAME-theme[disabled].br-checked .br-icon,input[type=checkbox][disabled]:not([br-no-style]).ng-not-empty{background-color:'{{background-1}}'}br-checkbox.br-THEME_NAME-theme[disabled].br-checked .br-icon:after,input[type=checkbox][disabled]:not([br-no-style]).ng-not-empty:after{border-color:'{{background-2}}'}br-checkbox.br-THEME_NAME-theme[disabled] .br-label,input[type=checkbox][disabled]:not([br-no-style])+label{color:'{{font-light-2}}'}.br-button.br-THEME_NAME-theme:not([disabled]).br-focused,.br-button.br-THEME_NAME-theme:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme:not([disabled]).br-focused,a.br-button.br-THEME_NAME-theme:not([disabled]):not(.br-mobile):hover{background-color:'{{background-default}}'}.br-button.br-THEME_NAME-theme,a.br-button.br-THEME_NAME-theme{color:'{{font-default}}'}.br-button.br-THEME_NAME-theme.br-circle:not([disabled]):not(.br-mobile):hover,.br-button.br-THEME_NAME-theme:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme.br-circle:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme:not([disabled]):not(.br-mobile):hover{background-color:'{{background-default}}'}.br-button .br-icon.br-THEME_NAME-theme{color:inherit}.br-button.br-THEME_NAME-theme.br-raised,a.br-button.br-THEME_NAME-theme.br-raised{color:#fbfbfb;background:'{{background-3}}'}.br-button.br-THEME_NAME-theme.br-raised:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme.br-raised:not([disabled]):not(.br-mobile):hover{background-color:'{{background-2}}'}.br-button.br-THEME_NAME-theme[disabled] .br-icon{color:'{{font-light-6}}'}.br-button.br-THEME_NAME-theme[disabled],a.br-button.br-THEME_NAME-theme[disabled]{color:'{{font-light-6}}';background:'{{foreground-default}}'}.br-button.br-THEME_NAME-theme.br-raised.br-circle,a.br-button.br-THEME_NAME-theme.br-raised.br-circle{color:'{{background-light-5}}';background:'{{background-light-1}}'}.br-button.br-THEME_NAME-theme.br-raised:not([disabled]):not(.br-circle):before,a.br-button.br-THEME_NAME-theme.br-raised:not([disabled]):not(.br-circle):before{background-image:linear-gradient('{{foreground-light-2}}','{{foreground-default}}');border-color:'{{foreground-dark-4}}'}.br-button.br-THEME_NAME-theme.br-raised .br-icon{color:'{{background-light-5}}'}.br-button.br-THEME_NAME-theme.br-primary:not([disabled]),.br-button.br-THEME_NAME-theme.br-primary:not([disabled]) .br-icon,a.br-button.br-THEME_NAME-theme.br-primary:not([disabled]){color:'{{primary-default}}'}.br-button.br-THEME_NAME-theme.br-primary.br-raised:not([disabled]),a.br-button.br-THEME_NAME-theme.br-primary.br-raised:not([disabled]){color:'{{primary-light-6}}';background:'{{primary-light-1}}'}.br-button.br-THEME_NAME-theme.br-primary.br-raised.br-circle:not([disabled]),a.br-button.br-THEME_NAME-theme.br-primary.br-raised.br-circle:not([disabled]){color:'{{primary-light-5}}';background:'{{primary-light-1}}'}.br-button.br-THEME_NAME-theme.br-primary.br-raised:not([disabled]):not(.br-circle):before,a.br-button.br-THEME_NAME-theme.br-primary.br-raised:not([disabled]):not(.br-circle):before{background:'{{primary-light-1}}';border-color:'{{primary-default}}'}.br-button.br-THEME_NAME-theme.br-primary:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme.br-primary:not([disabled]):not(.br-mobile):hover{color:'{{primary-light-6}}';background:'{{primary-default}}'}.br-button.br-THEME_NAME-theme.br-primary:not([disabled]).br-focused,a.br-button.br-THEME_NAME-theme.br-primary:not([disabled]).br-focused{color:'{{primary-light-6}}';background:'{{primary-light-1}}'}.br-button.br-THEME_NAME-theme.br-primary.br-raised .br-icon{color:'{{primary-light-5}}'}.br-button.br-THEME_NAME-theme.br-primary:not([disabled]).br-focused .br-icon,.br-button.br-THEME_NAME-theme.br-primary:not([disabled]):not(.br-mobile):hover .br-icon{color:'{{primary-light-6}}'}.br-button.br-THEME_NAME-theme.br-accent:not([disabled]),.br-button.br-THEME_NAME-theme.br-accent:not([disabled]) .br-icon,a.br-button.br-THEME_NAME-theme.br-accent:not([disabled]){color:'{{accent-default}}'}.br-button.br-THEME_NAME-theme.br-accent.br-raised:not([disabled]),a.br-button.br-THEME_NAME-theme.br-accent.br-raised:not([disabled]){color:'{{accent-light-6}}';background:'{{accent-light-1}}'}.br-button.br-THEME_NAME-theme.br-accent.br-raised.br-circle:not([disabled]),a.br-button.br-THEME_NAME-theme.br-accent.br-raised.br-circle:not([disabled]){color:'{{accent-light-5}}';background:'{{accent-light-1}}'}.br-button.br-THEME_NAME-theme.br-accent.br-raised:not([disabled]):not(.br-circle):before,a.br-button.br-THEME_NAME-theme.br-accent.br-raised:not([disabled]):not(.br-circle):before{background:'{{accent-light-1}}';border-color:'{{accent-default}}'}.br-button.br-THEME_NAME-theme.br-accent:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme.br-accent:not([disabled]):not(.br-mobile):hover{color:'{{accent-light-6}}';background:'{{accent-default}}'}.br-button.br-THEME_NAME-theme.br-accent:not([disabled]).br-focused,a.br-button.br-THEME_NAME-theme.br-accent:not([disabled]).br-focused{color:'{{accent-light-6}}';background:'{{accent-light-1}}'}.br-button.br-THEME_NAME-theme.br-accent.br-raised .br-icon{color:'{{accent-light-5}}'}.br-button.br-THEME_NAME-theme.br-accent:not([disabled]).br-focused .br-icon,.br-button.br-THEME_NAME-theme.br-accent:not([disabled]):not(.br-mobile):hover .br-icon{color:'{{accent-light-6}}'}.br-button.br-THEME_NAME-theme.br-warn:not([disabled]),.br-button.br-THEME_NAME-theme.br-warn:not([disabled]) .br-icon,a.br-button.br-THEME_NAME-theme.br-warn:not([disabled]){color:'{{warn-default}}'}.br-button.br-THEME_NAME-theme.br-warn.br-raised:not([disabled]),a.br-button.br-THEME_NAME-theme.br-warn.br-raised:not([disabled]){color:'{{warn-light-6}}';background:'{{warn-light-1}}'}.br-button.br-THEME_NAME-theme.br-warn.br-raised.br-circle:not([disabled]),a.br-button.br-THEME_NAME-theme.br-warn.br-raised.br-circle:not([disabled]){color:'{{warn-light-5}}';background:'{{warn-light-1}}'}.br-button.br-THEME_NAME-theme.br-warn.br-raised:not([disabled]):not(.br-circle):before,a.br-button.br-THEME_NAME-theme.br-warn.br-raised:not([disabled]):not(.br-circle):before{background:'{{warn-light-1}}';border-color:'{{warn-default}}'}.br-button.br-THEME_NAME-theme.br-warn:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme.br-warn:not([disabled]):not(.br-mobile):hover{color:'{{warn-light-6}}';background:'{{warn-default}}'}.br-button.br-THEME_NAME-theme.br-warn:not([disabled]).br-focused,a.br-button.br-THEME_NAME-theme.br-warn:not([disabled]).br-focused{color:'{{warn-light-6}}';background:'{{warn-light-1}}'}.br-button.br-THEME_NAME-theme.br-warn.br-raised .br-icon{color:'{{warn-light-5}}'}.br-button.br-THEME_NAME-theme.br-warn:not([disabled]).br-focused .br-icon,.br-button.br-THEME_NAME-theme.br-warn:not([disabled]):not(.br-mobile):hover .br-icon{color:'{{warn-light-6}}'}br-dialog.br-THEME_NAME-theme .br-dialog-content{background-color:'{{dialogBackground-default}}'}br-dialog.br-THEME_NAME-theme:not(.br-alert) .br-dialog-container{background-color:'{{overlay}}'}br-dialog.br-THEME_NAME-theme:not(.br-alert).br-mobile-fill .br-dialog-container{background-color:'{{dialogBackground-default}}'}br-dialog.br-THEME_NAME-theme .br-dialog-label{color:'{{font-default}}'}.br-THEME_NAME-theme.br-drag-order-select-top,.br-THEME_NAME-theme .br-drag-order-select-top{box-shadow:inset 0 8px 0 -4px '{{primary-default}}'}.br-THEME_NAME-theme.br-drag-order-select-bottom,.br-THEME_NAME-theme .br-drag-order-select-bottom{box-shadow:inset 0 -8px 0 -4px '{{primary-default}}'}.br-expander.br-THEME_NAME-theme .br-expander-header{border-color:'{{background-1}}';color:'{{font-light-1}}';background:'{{foreground-light-4}}'}.br-expander.br-THEME_NAME-theme .br-expander-icon{color:'{{font-light-5}}'}.br-expander.br-THEME_NAME-theme br-expander-content{border-color:'{{foreground-dark-4}}'}.br-expander.br-THEME_NAME-theme.br-primary .br-expander-header{color:'{{primary-light-6}}';background:'{{primary-default}}'}.br-expander.br-THEME_NAME-theme.br-primary .br-expander-icon{color:'{{primary-light-6}}'}.br-expander.br-THEME_NAME-theme.br-accent .br-expander-header{color:'{{accent-light-6}}';background:'{{accent-default}}'}.br-expander.br-THEME_NAME-theme.br-accent .br-expander-icon{color:'{{accent-light-6}}'}.br-expander.br-THEME_NAME-theme.br-warn .br-expander-header{color:'{{warn-light-6}}';background:'{{warn-default}}'}.br-expander.br-THEME_NAME-theme.br-warn .br-expander-icon{color:'{{warn-light-6}}'}.br-icon.br-THEME_NAME-theme{color:'{{font-default}}'}.br-icon.br-THEME_NAME-theme.br-primary{color:'{{primary-default}}'}.br-icon.br-THEME_NAME-theme.br-accent{color:'{{accent-default}}'}.br-icon.br-THEME_NAME-theme.br-warn{color:'{{warn-default}}'}br-input.br-THEME_NAME-theme .br-input,input.br-input-standard{color:'{{font-default}}';border-color:'{{foreground-dark-4}}'}br-input.br-THEME_NAME-theme ::placeholder,input.br-input-standard ::placeholder{color:'{{font-light-5}}'}br-input.br-THEME_NAME-theme .br-placeholder,br-input.br-THEME_NAME-theme label,input.br-input-standard+label{color:'{{font-light-2}}'}br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-has-value label,input.br-input-standard.ng-not-empty+label{color:'{{font-light-3}}'}br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-focused .br-input:not([readonly]),input.br-input-standard:focus{border-color:'{{primary-default}}'}input.br-input-standard:focus+label br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-focused label{color:'{{primary-default}}'}br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-focused.br-accent .br-input{border-color:'{{accent-light-1}}'}br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-focused.br-accent label{color:'{{accent-default}}'}br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-focused.br-warn .br-input{border-color:'{{warn-light-1}}'}br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-focused.br-warn label{color:'{{warn-default}}'}br-input.br-THEME_NAME-theme.br-input-invalid .br-input,input.br-input-standard.ng-invalid.ng-touched{border-color:'{{warn-default}}'}br-input.br-THEME_NAME-theme.br-input-invalid label,input.br-input-standard.ng-invalid.ng-touched+label{color:'{{warn-default}}'}br-input.br-THEME_NAME-theme [data-ng-message],br-input.br-THEME_NAME-theme [ng-message],br-input.br-THEME_NAME-theme [x-ng-message],br-input.br-THEME_NAME-theme data-ng-message,br-input.br-THEME_NAME-theme ng-message,br-input.br-THEME_NAME-theme x-ng-message{color:'{{font-light-2}}'}br-input.br-THEME_NAME-theme.br-input-invalid [data-ng-message],br-input.br-THEME_NAME-theme.br-input-invalid [ng-message],br-input.br-THEME_NAME-theme.br-input-invalid [x-ng-message],br-input.br-THEME_NAME-theme.br-input-invalid data-ng-message,br-input.br-THEME_NAME-theme.br-input-invalid ng-message,br-input.br-THEME_NAME-theme.br-input-invalid x-ng-message{color:'{{warn-default}}'}br-input.br-THEME_NAME-theme .br-input[disabled],input[disabled].br-input-standard{border-color:transparent;color:'{{foreground-light-2}}';background-image:linear-gradient(90deg,'{{foreground-light-3}}' 0,'{{foreground-light-3}}' 33%,transparent 0)}br-input.br-THEME_NAME-theme .br-input[readonly=readonly],br-input.br-THEME_NAME-theme .br-input[readonly],input[readonly=readonly].br-input-standard,input[readonly].br-input-standard{color:'{{font-light-2}}';background-color:'{{foreground-light-3}}';border-color:'{{foreground-light-3}}'}br-input.br-THEME_NAME-theme .br-x{color:'{{font-light-2}}'}br-input.br-THEME_NAME-theme:not([disabled]):not(.br-touch) .br-x:hover,br-list.br-THEME_NAME-theme br-item{color:'{{font-default}}'}br-list.br-THEME_NAME-theme:not(.br-no-divider) br-item{border-color:'{{foreground-default}}'}br-list.br-THEME_NAME-theme .br-item-title{color:'{{font-default}}'}br-list.br-THEME_NAME-theme .br-item-sub-title{color:'{{font-light-1}}'}br-list.br-THEME_NAME-theme br-item.br-selected{background-color:'{{foreground-default}}'}br-list.br-THEME_NAME-theme:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover{color:'{{font-default}}';background-color:'{{foreground-light-1}}'}br-list.br-THEME_NAME-theme:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-sub-title,br-list.br-THEME_NAME-theme:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-title{color:'{{font-light-2}}'}br-list.br-THEME_NAME-theme.br-primary br-item.br-selected{background-color:'{{primary-light-2}}'}br-list.br-THEME_NAME-theme.br-primary:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover{color:'{{primary-light-6}}';background-color:'{{primary-light-1}}'}br-list.br-THEME_NAME-theme.br-primary:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-sub-title,br-list.br-THEME_NAME-theme.br-primary:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-title{color:'{{primary-light-6}}'}br-list.br-THEME_NAME-theme.br-accent br-item.br-selected{background-color:'{{accent-light-2}}'}br-list.br-THEME_NAME-theme.br-accent:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover{color:'{{accent-light-6}}';background-color:'{{accent-light-1}}'}br-list.br-THEME_NAME-theme.br-accent:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-sub-title,br-list.br-THEME_NAME-theme.br-accent:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-title{color:'{{accent-light-6}}'}br-list.br-THEME_NAME-theme.br-warn br-item.br-selected{background-color:'{{warn-light-2}}'}br-list.br-THEME_NAME-theme.br-warn:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover{color:'{{warn-light-6}}';background-color:'{{warn-light-1}}'}br-list.br-THEME_NAME-theme.br-warn:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-sub-title,br-list.br-THEME_NAME-theme.br-warn:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-title{color:'{{warn-light-6}}'}br-radio-button.br-THEME_NAME-theme .br-off{border-color:'{{background-2}}'}br-radio-button.br-THEME_NAME-theme .br-on{background-color:'{{background-3}}'}br-radio-button.br-THEME_NAME-theme.br-checked .br-off{border-color:'{{background-3}}'}br-radio-button.br-THEME_NAME-theme.br-primary .br-off{border-color:'{{primary-light-1}}'}br-radio-button.br-THEME_NAME-theme:not([disabled]).br-primary .br-on{background-color:'{{primary-light-1}}'}br-radio-button.br-THEME_NAME-theme:not([disabled]).br-primary.br-checked .br-off{border-color:'{{primary-light-1}}'}br-radio-button.br-THEME_NAME-theme.br-accent .br-off{border-color:'{{accent-light-1}}'}br-radio-button.br-THEME_NAME-theme:not([disabled]).br-accent .br-on{background-color:'{{accent-light-1}}'}br-radio-button.br-THEME_NAME-theme:not([disabled]).br-accent.br-checked .br-off{border-color:'{{accent-light-1}}'}br-radio-button.br-THEME_NAME-theme.br-warn .br-off{border-color:'{{warn-light-1}}'}br-radio-button.br-THEME_NAME-theme:not([disabled]).br-warn .br-on{background-color:'{{warn-light-1}}'}br-radio-button.br-THEME_NAME-theme:not([disabled]).br-warn.br-checked .br-off{border-color:'{{warn-light-1}}'}br-radio-button.br-THEME_NAME-theme[disabled] .br-container .br-off,br-radio-button.br-THEME_NAME-theme[disabled] .br-container .br-on{border-color:'{{foreground-light-2}}'}br-radio-group.br-THEME_NAME-theme:focus:not(:empty){border-color:'{{foreground-default}}'}br-radio-button.br-THEME_NAME-theme .br-label{color:'{{font-default}}'}br-menu-content.br-THEME_NAME-theme{background-color:'{{foreground-light-4}}'}br-menu-content.br-THEME_NAME-theme br-menu-divider{background-color:'{{background-1}}'}.br-select.br-THEME_NAME-theme .br-select-content{color:transparent}.br-select.br-THEME_NAME-theme.br-select-has-value .br-select-content,select.br-select-standard.ng-not-empty{color:'{{font-default}}'}.br-select.br-THEME_NAME-theme .br-select-content,select.br-select-standard{border-color:'{{foreground-dark-4}}'}.br-select.br-THEME_NAME-theme .br-select-content.br-disabled,select[disabled].br-select-standard{color:'{{foreground-light-2}}';border-color:transparent;background-image:linear-gradient(90deg,'{{foreground-light-3}}' 0,'{{foreground-light-3}}' 33%,transparent 0)}.br-select.br-THEME_NAME-theme ::placeholder{color:'{{font-light-5}}'}.br-select.br-THEME_NAME-theme .br-placeholder{color:'{{font-light-4}}'}.br-select.br-THEME_NAME-theme label,select.br-select-standard+label{color:'{{font-light-2}}'}.br-select.br-THEME_NAME-theme.br-select-has-placeholder .br-select-content{color:'{{font-light-3}}'}.br-select.br-THEME_NAME-theme.br-select-has-value .br-select-content{color:'{{font-default}}'}.br-select.br-THEME_NAME-theme.br-select-has-value label,.br-select.br-THEME_NAME-theme .br-select-icon,select.br-select-standard.ng-not-empty+label{color:'{{font-light-3}}'}.br-select.br-THEME_NAME-theme .br-select-content.br-disabled .br-select-icon{color:'{{font-light-5}}'}.br-select.br-THEME_NAME-theme.br-select-focused .br-select-content,select.br-select-standard:focus{border-color:'{{primary-default}}'}.br-select.br-THEME_NAME-theme.br-select-focused label,select.br-select-standard:focus+label{color:'{{primary-default}}'}.br-select.br-THEME_NAME-theme.br-select-focused.br-accent .br-select-content{border-color:'{{accent-light-1}}'}.br-select.br-THEME_NAME-theme.br-select-focused.br-accent label{color:'{{accent-default}}'}.br-select.br-THEME_NAME-theme.br-select-focused.br-warn .br-select-content{border-color:'{{warn-light-1}}'}.br-select.br-THEME_NAME-theme.br-select-focused.br-warn label{color:'{{warn-default}}'}br-side-content.br-THEME_NAME-theme{background-color:'{{foreground-light-4}}'}br-side-content.br-THEME_NAME-theme.br-border-left,br-side-content.br-THEME_NAME-theme.br-border-right{border-color:'{{background-1}}'}br-slider.br-THEME_NAME-theme .br-track{background-color:'{{foreground-light-2}}'}br-slider.br-THEME_NAME-theme .br-thumb,br-slider.br-THEME_NAME-theme .br-track.br-track-fill{background-color:'{{foreground-default}}'}br-slider.br-THEME_NAME-theme .br-slider-value{color:'{{font-light-2}}';background-color:'{{background-2}}'}br-slider.br-THEME_NAME-theme .br-focus-ring{border-color:'{{foreground-light-3}}'}br-slider.br-THEME_NAME-theme.br-primary .br-track.br-track-fill{background-color:'{{primary-default}}'}br-slider.br-THEME_NAME-theme.br-primary .br-thumb{border-color:'{{primary-default}}';background-color:'{{primary-default}}'}br-slider.br-THEME_NAME-theme.br-accent .br-track.br-track-fill{background-color:'{{accent-default}}'}br-slider.br-THEME_NAME-theme.br-accent .br-thumb{border-color:'{{accent-default}}';background-color:'{{accent-default}}'}br-slider.br-THEME_NAME-theme.br-warn .br-track.br-track-fill{background-color:'{{warn-default}}'}br-slider.br-THEME_NAME-theme.br-warn .br-thumb{border-color:'{{warn-default}}';background-color:'{{warn-default}}'}br-slider.br-THEME_NAME-theme[disabled] .br-thumb,br-slider.br-THEME_NAME-theme[disabled] .br-track{background-color:'{{background-2}}'}br-spinner.br-THEME_NAME-theme{background-color:transparent}br-spinner.br-THEME_NAME-theme .br-spinner-left .br-half-circle,br-spinner.br-THEME_NAME-theme .br-spinner-right .br-half-circle{border-right-color:'{{background-1}}';border-bottom-color:'{{background-1}}'}br-spinner.br-THEME_NAME-theme.br-primary .br-spinner-left .br-half-circle,br-spinner.br-THEME_NAME-theme.br-primary .br-spinner-right .br-half-circle{border-right-color:'{{primary-default}}';border-bottom-color:'{{primary-default}}'}br-spinner.br-THEME_NAME-theme.br-accent .br-spinner-left .br-half-circle,br-spinner.br-THEME_NAME-theme.br-accent .br-spinner-right .br-half-circle{border-right-color:'{{accent-default}}';border-bottom-color:'{{accent-default}}'}br-spinner.br-THEME_NAME-theme.br-warn .br-spinner-left .br-half-circle,br-spinner.br-THEME_NAME-theme.br-warn .br-spinner-right .br-half-circle{border-right-color:'{{warn-default}}';border-bottom-color:'{{warn-default}}'}.br-subheader.br-THEME_NAME-theme:not(.br-no-style) .br-subheader-inner{background:#f5f5f5}br-switch.br-THEME_NAME-theme .br-thumb{background-color:'{{background-1}}'}br-switch.br-THEME_NAME-theme.br-primary .br-thumb{background-color:'{{primary-light-1}}'}br-switch.br-THEME_NAME-theme.br-accent .br-thumb{background-color:'{{accent-light-1}}'}br-switch.br-THEME_NAME-theme.br-warn .br-thumb{background-color:'{{warn-light-1}}'}br-switch.br-THEME_NAME-theme .br-check{border-color:#fff}br-switch.br-THEME_NAME-theme.br-primary .br-check{border-color:'{{primary-light-6}}'}br-switch.br-THEME_NAME-theme.br-accent .br-check{border-color:'{{accent-light-6}}'}br-switch.br-THEME_NAME-theme.br-warn .br-check{border-color:'{{warn-light-6}}'}br-switch.br-THEME_NAME-theme.br-checked .br-thumb{background-color:#fff}br-switch.br-THEME_NAME-theme.br-checked .br-bar{background-color:'{{background-1}}'}br-switch.br-THEME_NAME-theme.br-checked.br-primary .br-thumb{background-color:'{{primary-default}}'}br-switch.br-THEME_NAME-theme.br-checked.br-primary .br-bar{background-color:'{{primary-light-3}}'}br-switch.br-THEME_NAME-theme.br-checked.br-accent .br-thumb{background-color:'{{accent-default}}'}br-switch.br-THEME_NAME-theme.br-checked.br-accent .br-bar{background-color:'{{accent-light-3}}'}br-switch.br-THEME_NAME-theme.br-checked.br-warn .br-thumb{background-color:'{{warn-default}}'}br-switch.br-THEME_NAME-theme.br-checked.br-warn .br-bar{background-color:'{{warn-light-3}}'}br-switch.br-THEME_NAME-theme[disabled] .br-thumb{background-color:'{{background-2}}'}br-switch.br-THEME_NAME-theme[disabled] .br-bar{background-color:'{{foreground-light-3}}'}br-switch.br-THEME_NAME-theme:focus .br-label:not(:empty){border-color:'{{foreground-default}}';border-style:dotted}br-switch.br-THEME_NAME-theme .br-label{color:'{{font-default}}'}br-table.br-THEME_NAME-theme br-th{color:'{{font-light-3}}'}br-table.br-THEME_NAME-theme br-th.active{color:'{{font-light-1}}'}br-table.br-THEME_NAME-theme br-td{color:'{{font-default}}'}br-tr{border-color:'{{foreground-default}}'}br-toast.br-THEME_NAME-theme.br-warn{background:'{{warn-default}}'}br-toast.br-THEME_NAME-theme.br-primary{background:'{{primary-default}}'}br-toast.br-THEME_NAME-theme.br-accent{background:'{{accent-default}}'}br-tooltip.br-THEME_NAME-theme{color:'{{font-light-6}}'}br-tooltip.br-THEME_NAME-theme .br-background{background-color:'{{background-5}}'}");
+(function(){"use strict";(function(){ 
+angular.module("brMaterial").constant("$BR_THEME_CSS", "h1,h2,h3,h4,h5,h6{color:'{{font-default}}'}.br-select.br-THEME_NAME-theme .br-select-menu-content{color:transparent}.br-select.br-THEME_NAME-theme.br-select-has-value .br-select-menu-content{color:'{{font-default}}'}.br-select.br-THEME_NAME-theme .br-select-menu-content{border-color:'{{foreground-dark-4}}'}.br-select.br-THEME_NAME-theme.br-select-focused .br-select-menu-content{border-color:'{{primary-default}}'}.br-select.br-THEME_NAME-theme br-select-menu[disabled] .br-select-menu-content{color:'{{foreground-light-2}}';border-color:transparent;background-image:linear-gradient(90deg,'{{foreground-light-3}}' 0,'{{foreground-light-3}}' 33%,transparent 0)}.br-optiongroups-container.br-THEME_NAME-theme br-option{color:'{{font-default}}'}.br-optiongroups-container.br-THEME_NAME-theme .br-option-group-label{color:'{{font-light-2}}'}.br-select.br-THEME_NAME-theme .br-select-menu-label{color:'{{font-default}}'}.br-select.br-THEME_NAME-theme br-select-menu[disabled] .br-select-menu-label{color:'{{font-light-3}}'}.br-select.br-THEME_NAME-theme .br-select-menu-label._br-placeholder{color:'{{font-light-5}}'}.br-select.br-THEME_NAME-theme:not(.br-select-has-placeholder) .br-select-menu-label._br-placeholder{color:transparent}.br-optiongroups-container.br-THEME_NAME-theme br-option.br-select-checkbox-enabled[selected] .br-select-menu-icon{background-color:'{{primary-default}}'}.br-optiongroups-container.br-THEME_NAME-theme br-option[selected]{color:'{{primary-default}}'}.br-optiongroups-container.br-THEME_NAME-theme br-option .br-select-menu-icon{border-color:'{{background-3}}'}.br-optiongroups-container.br-THEME_NAME-theme br-option[selected] .br-select-menu-icon:after{border-color:'{{primary-light-6}}'}br-autocomplete.br-THEME_NAME-theme .br-autocomplete-container{background-color:'{{foreground-light-4}}';border-color:'{{foreground-light-1}}'}br-autocomplete.br-THEME_NAME-theme .br-autocomplete-repeater{background-color:'{{foreground-light-4}}';color:'{{font-default}}'}br-checkbox.br-THEME_NAME-theme .br-icon,input[type=checkbox]:not([br-no-style]){border-color:'{{background-2}}'}br-checkbox.br-THEME_NAME-theme.br-checked .br-icon,input[type=checkbox]:not([br-no-style]).ng-not-empty{background-color:'{{foreground-dark-4}}'}br-checkbox.br-THEME_NAME-theme.br-checked .br-icon:after,input[type=checkbox]:not([br-no-style]).ng-not-empty:after{border-color:'{{background-3}}'}br-checkbox.br-THEME_NAME-theme .br-label,input[type=checkbox]:not([br-no-style])+label{color:'{{font-default}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-primary .br-icon,input[type=checkbox]:not([br-no-style]).br-primary{border-color:'{{primary-light-2}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-primary.br-checked.br-focused .br-container:before,br-checkbox.br-THEME_NAME-theme:not([disabled]).br-primary.br-checked .br-icon,input[type=checkbox]:not([br-no-style]).br-primary.ng-not-empty{background-color:'{{primary-default}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-primary.br-checked .br-icon:after,input[type=checkbox]:not([br-no-style]).br-primary.ng-not-empty:after{border-color:'{{primary-light-5}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-accent .br-icon,input[type=checkbox]:not([br-no-style]).br-accent{border-color:'{{accent-light-2}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-accent.br-checked.br-focused .br-container:before,br-checkbox.br-THEME_NAME-theme:not([disabled]).br-accent.br-checked .br-icon,input[type=checkbox]:not([br-no-style]).br-accent.ng-not-empty{background-color:'{{accent-default}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-accent.br-checked .br-icon:after,input[type=checkbox]:not([br-no-style]).br-accent.ng-not-empty:after{border-color:'{{accent-light-5}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-warn .br-icon,input[type=checkbox]:not([br-no-style]).br-warn{border-color:'{{warn-light-2}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-warn.br-checked.br-focused:not([disabled]) .br-container:before,br-checkbox.br-THEME_NAME-theme:not([disabled]).br-warn.br-checked .br-icon,input[type=checkbox]:not([br-no-style]).br-warn.ng-not-empty{background-color:'{{warn-default}}'}br-checkbox.br-THEME_NAME-theme:not([disabled]).br-warn.br-checked .br-icon:after,input[type=checkbox]:not([br-no-style]).br-warn.ng-not-empty:after{border-color:'{{warn-light-5}}'}br-checkbox.br-THEME_NAME-theme[disabled] .br-icon,input[type=checkbox][disabled]:not([br-no-style]){border-color:'{{background-1}}'}br-checkbox.br-THEME_NAME-theme[disabled].br-checked .br-icon,input[type=checkbox][disabled]:not([br-no-style]).ng-not-empty{background-color:'{{background-1}}'}br-checkbox.br-THEME_NAME-theme[disabled].br-checked .br-icon:after,input[type=checkbox][disabled]:not([br-no-style]).ng-not-empty:after{border-color:'{{background-2}}'}br-checkbox.br-THEME_NAME-theme[disabled] .br-label,input[type=checkbox][disabled]:not([br-no-style])+label{color:'{{font-light-2}}'}.br-button.br-THEME_NAME-theme:not([disabled]).br-focused,.br-button.br-THEME_NAME-theme:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme:not([disabled]).br-focused,a.br-button.br-THEME_NAME-theme:not([disabled]):not(.br-mobile):hover{background-color:'{{background-default}}'}.br-button.br-THEME_NAME-theme,a.br-button.br-THEME_NAME-theme{color:'{{font-default}}'}.br-button.br-THEME_NAME-theme.br-circle:not([disabled]):not(.br-mobile):hover,.br-button.br-THEME_NAME-theme:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme.br-circle:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme:not([disabled]):not(.br-mobile):hover{background-color:'{{background-default}}'}.br-button .br-icon.br-THEME_NAME-theme{color:inherit}.br-button.br-THEME_NAME-theme.br-raised,a.br-button.br-THEME_NAME-theme.br-raised{color:#fbfbfb;background:'{{background-3}}'}.br-button.br-THEME_NAME-theme.br-raised:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme.br-raised:not([disabled]):not(.br-mobile):hover{background-color:'{{background-2}}'}.br-button.br-THEME_NAME-theme[disabled] .br-icon{color:'{{font-light-6}}'}.br-button.br-THEME_NAME-theme[disabled],a.br-button.br-THEME_NAME-theme[disabled]{color:'{{font-light-6}}';background:'{{foreground-default}}'}.br-button.br-THEME_NAME-theme.br-raised.br-circle,a.br-button.br-THEME_NAME-theme.br-raised.br-circle{color:'{{background-light-5}}';background:'{{background-light-1}}'}.br-button.br-THEME_NAME-theme.br-raised:not([disabled]):not(.br-circle):before,a.br-button.br-THEME_NAME-theme.br-raised:not([disabled]):not(.br-circle):before{background-image:linear-gradient('{{foreground-light-2}}','{{foreground-default}}');border-color:'{{foreground-dark-4}}'}.br-button.br-THEME_NAME-theme.br-raised .br-icon{color:'{{background-light-5}}'}.br-button.br-THEME_NAME-theme.br-primary:not([disabled]),.br-button.br-THEME_NAME-theme.br-primary:not([disabled]) .br-icon,a.br-button.br-THEME_NAME-theme.br-primary:not([disabled]){color:'{{primary-default}}'}.br-button.br-THEME_NAME-theme.br-primary.br-raised:not([disabled]),a.br-button.br-THEME_NAME-theme.br-primary.br-raised:not([disabled]){color:'{{primary-light-6}}';background:'{{primary-light-1}}'}.br-button.br-THEME_NAME-theme.br-primary.br-raised.br-circle:not([disabled]),a.br-button.br-THEME_NAME-theme.br-primary.br-raised.br-circle:not([disabled]){color:'{{primary-light-5}}';background:'{{primary-light-1}}'}.br-button.br-THEME_NAME-theme.br-primary.br-raised:not([disabled]):not(.br-circle):before,a.br-button.br-THEME_NAME-theme.br-primary.br-raised:not([disabled]):not(.br-circle):before{background:'{{primary-light-1}}';border-color:'{{primary-default}}'}.br-button.br-THEME_NAME-theme.br-primary:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme.br-primary:not([disabled]):not(.br-mobile):hover{color:'{{primary-light-6}}';background:'{{primary-default}}'}.br-button.br-THEME_NAME-theme.br-primary:not([disabled]).br-focused,a.br-button.br-THEME_NAME-theme.br-primary:not([disabled]).br-focused{color:'{{primary-light-6}}';background:'{{primary-light-1}}'}.br-button.br-THEME_NAME-theme.br-primary.br-raised .br-icon{color:'{{primary-light-5}}'}.br-button.br-THEME_NAME-theme.br-primary:not([disabled]).br-focused .br-icon,.br-button.br-THEME_NAME-theme.br-primary:not([disabled]):not(.br-mobile):hover .br-icon{color:'{{primary-light-6}}'}.br-button.br-THEME_NAME-theme.br-accent:not([disabled]),.br-button.br-THEME_NAME-theme.br-accent:not([disabled]) .br-icon,a.br-button.br-THEME_NAME-theme.br-accent:not([disabled]){color:'{{accent-default}}'}.br-button.br-THEME_NAME-theme.br-accent.br-raised:not([disabled]),a.br-button.br-THEME_NAME-theme.br-accent.br-raised:not([disabled]){color:'{{accent-light-6}}';background:'{{accent-light-1}}'}.br-button.br-THEME_NAME-theme.br-accent.br-raised.br-circle:not([disabled]),a.br-button.br-THEME_NAME-theme.br-accent.br-raised.br-circle:not([disabled]){color:'{{accent-light-5}}';background:'{{accent-light-1}}'}.br-button.br-THEME_NAME-theme.br-accent.br-raised:not([disabled]):not(.br-circle):before,a.br-button.br-THEME_NAME-theme.br-accent.br-raised:not([disabled]):not(.br-circle):before{background:'{{accent-light-1}}';border-color:'{{accent-default}}'}.br-button.br-THEME_NAME-theme.br-accent:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme.br-accent:not([disabled]):not(.br-mobile):hover{color:'{{accent-light-6}}';background:'{{accent-default}}'}.br-button.br-THEME_NAME-theme.br-accent:not([disabled]).br-focused,a.br-button.br-THEME_NAME-theme.br-accent:not([disabled]).br-focused{color:'{{accent-light-6}}';background:'{{accent-light-1}}'}.br-button.br-THEME_NAME-theme.br-accent.br-raised .br-icon{color:'{{accent-light-5}}'}.br-button.br-THEME_NAME-theme.br-accent:not([disabled]).br-focused .br-icon,.br-button.br-THEME_NAME-theme.br-accent:not([disabled]):not(.br-mobile):hover .br-icon{color:'{{accent-light-6}}'}.br-button.br-THEME_NAME-theme.br-warn:not([disabled]),.br-button.br-THEME_NAME-theme.br-warn:not([disabled]) .br-icon,a.br-button.br-THEME_NAME-theme.br-warn:not([disabled]){color:'{{warn-default}}'}.br-button.br-THEME_NAME-theme.br-warn.br-raised:not([disabled]),a.br-button.br-THEME_NAME-theme.br-warn.br-raised:not([disabled]){color:'{{warn-light-6}}';background:'{{warn-light-1}}'}.br-button.br-THEME_NAME-theme.br-warn.br-raised.br-circle:not([disabled]),a.br-button.br-THEME_NAME-theme.br-warn.br-raised.br-circle:not([disabled]){color:'{{warn-light-5}}';background:'{{warn-light-1}}'}.br-button.br-THEME_NAME-theme.br-warn.br-raised:not([disabled]):not(.br-circle):before,a.br-button.br-THEME_NAME-theme.br-warn.br-raised:not([disabled]):not(.br-circle):before{background:'{{warn-light-1}}';border-color:'{{warn-default}}'}.br-button.br-THEME_NAME-theme.br-warn:not([disabled]):not(.br-mobile):hover,a.br-button.br-THEME_NAME-theme.br-warn:not([disabled]):not(.br-mobile):hover{color:'{{warn-light-6}}';background:'{{warn-default}}'}.br-button.br-THEME_NAME-theme.br-warn:not([disabled]).br-focused,a.br-button.br-THEME_NAME-theme.br-warn:not([disabled]).br-focused{color:'{{warn-light-6}}';background:'{{warn-light-1}}'}.br-button.br-THEME_NAME-theme.br-warn.br-raised .br-icon{color:'{{warn-light-5}}'}.br-button.br-THEME_NAME-theme.br-warn:not([disabled]).br-focused .br-icon,.br-button.br-THEME_NAME-theme.br-warn:not([disabled]):not(.br-mobile):hover .br-icon{color:'{{warn-light-6}}'}br-dialog.br-THEME_NAME-theme .br-dialog-content{background-color:'{{dialogBackground-default}}'}br-dialog.br-THEME_NAME-theme:not(.br-alert) .br-dialog-container{background-color:'{{overlay}}'}br-dialog.br-THEME_NAME-theme:not(.br-alert).br-mobile-fill .br-dialog-container{background-color:'{{dialogBackground-default}}'}br-dialog.br-THEME_NAME-theme .br-dialog-label{color:'{{font-default}}'}.br-THEME_NAME-theme.br-drag-order-select-top,.br-THEME_NAME-theme .br-drag-order-select-top{box-shadow:inset 0 8px 0 -4px '{{primary-default}}'}.br-THEME_NAME-theme.br-drag-order-select-bottom,.br-THEME_NAME-theme .br-drag-order-select-bottom{box-shadow:inset 0 -8px 0 -4px '{{primary-default}}'}.br-expander.br-THEME_NAME-theme .br-expander-header{border-color:'{{background-1}}';color:'{{font-light-1}}';background:'{{foreground-light-4}}'}.br-expander.br-THEME_NAME-theme .br-expander-icon{color:'{{font-light-5}}'}.br-expander.br-THEME_NAME-theme br-expander-content{border-color:'{{foreground-dark-4}}'}.br-expander.br-THEME_NAME-theme.br-primary .br-expander-header{color:'{{primary-light-6}}';background:'{{primary-default}}'}.br-expander.br-THEME_NAME-theme.br-primary .br-expander-icon{color:'{{primary-light-6}}'}.br-expander.br-THEME_NAME-theme.br-accent .br-expander-header{color:'{{accent-light-6}}';background:'{{accent-default}}'}.br-expander.br-THEME_NAME-theme.br-accent .br-expander-icon{color:'{{accent-light-6}}'}.br-expander.br-THEME_NAME-theme.br-warn .br-expander-header{color:'{{warn-light-6}}';background:'{{warn-default}}'}.br-expander.br-THEME_NAME-theme.br-warn .br-expander-icon{color:'{{warn-light-6}}'}.br-icon.br-THEME_NAME-theme{color:'{{font-default}}'}.br-icon.br-THEME_NAME-theme.br-primary{color:'{{primary-default}}'}.br-icon.br-THEME_NAME-theme.br-accent{color:'{{accent-default}}'}.br-icon.br-THEME_NAME-theme.br-warn{color:'{{warn-default}}'}br-input.br-THEME_NAME-theme .br-input,input.br-input-standard{color:'{{font-default}}';border-color:'{{foreground-dark-4}}'}br-input.br-THEME_NAME-theme ::placeholder,input.br-input-standard ::placeholder{color:'{{font-light-5}}'}br-input.br-THEME_NAME-theme .br-placeholder,br-input.br-THEME_NAME-theme label,input.br-input-standard+label{color:'{{font-light-2}}'}br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-has-value label,input.br-input-standard.ng-not-empty+label{color:'{{font-light-3}}'}br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-focused .br-input:not([readonly]),input.br-input-standard:focus{border-color:'{{primary-default}}'}input.br-input-standard:focus+label br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-focused label{color:'{{primary-default}}'}br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-focused.br-accent .br-input{border-color:'{{accent-light-1}}'}br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-focused.br-accent label{color:'{{accent-default}}'}br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-focused.br-warn .br-input{border-color:'{{warn-light-1}}'}br-input.br-THEME_NAME-theme:not(.br-input-invalid).br-input-focused.br-warn label{color:'{{warn-default}}'}br-input.br-THEME_NAME-theme.br-input-invalid .br-input,input.br-input-standard.ng-invalid.ng-touched{border-color:'{{warn-default}}'}br-input.br-THEME_NAME-theme.br-input-invalid label,input.br-input-standard.ng-invalid.ng-touched+label{color:'{{warn-default}}'}br-input.br-THEME_NAME-theme [data-ng-message],br-input.br-THEME_NAME-theme [ng-message],br-input.br-THEME_NAME-theme [x-ng-message],br-input.br-THEME_NAME-theme data-ng-message,br-input.br-THEME_NAME-theme ng-message,br-input.br-THEME_NAME-theme x-ng-message{color:'{{font-light-2}}'}br-input.br-THEME_NAME-theme.br-input-invalid [data-ng-message],br-input.br-THEME_NAME-theme.br-input-invalid [ng-message],br-input.br-THEME_NAME-theme.br-input-invalid [x-ng-message],br-input.br-THEME_NAME-theme.br-input-invalid data-ng-message,br-input.br-THEME_NAME-theme.br-input-invalid ng-message,br-input.br-THEME_NAME-theme.br-input-invalid x-ng-message{color:'{{warn-default}}'}br-input.br-THEME_NAME-theme .br-input[disabled],input[disabled].br-input-standard{border-color:transparent;color:'{{foreground-light-2}}';background-image:linear-gradient(90deg,'{{foreground-light-3}}' 0,'{{foreground-light-3}}' 33%,transparent 0)}br-input.br-THEME_NAME-theme .br-input[readonly=readonly],br-input.br-THEME_NAME-theme .br-input[readonly],input[readonly=readonly].br-input-standard,input[readonly].br-input-standard{color:'{{font-light-2}}';background-color:'{{foreground-light-3}}';border-color:'{{foreground-light-3}}'}br-input.br-THEME_NAME-theme .br-x{color:'{{font-light-2}}'}br-input.br-THEME_NAME-theme:not([disabled]):not(.br-touch) .br-x:hover,br-list.br-THEME_NAME-theme br-item{color:'{{font-default}}'}br-list.br-THEME_NAME-theme:not(.br-no-divider) br-item{border-color:'{{foreground-default}}'}br-list.br-THEME_NAME-theme .br-item-title{color:'{{font-default}}'}br-list.br-THEME_NAME-theme .br-item-sub-title{color:'{{font-light-1}}'}br-list.br-THEME_NAME-theme br-item.br-selected{background-color:'{{foreground-default}}'}br-list.br-THEME_NAME-theme:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover{color:'{{font-default}}';background-color:'{{foreground-light-1}}'}br-list.br-THEME_NAME-theme:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-sub-title,br-list.br-THEME_NAME-theme:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-title{color:'{{font-light-2}}'}br-list.br-THEME_NAME-theme.br-primary br-item.br-selected{background-color:'{{primary-light-2}}'}br-list.br-THEME_NAME-theme.br-primary:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover{color:'{{primary-light-6}}';background-color:'{{primary-light-1}}'}br-list.br-THEME_NAME-theme.br-primary:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-sub-title,br-list.br-THEME_NAME-theme.br-primary:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-title{color:'{{primary-light-6}}'}br-list.br-THEME_NAME-theme.br-accent br-item.br-selected{background-color:'{{accent-light-2}}'}br-list.br-THEME_NAME-theme.br-accent:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover{color:'{{accent-light-6}}';background-color:'{{accent-light-1}}'}br-list.br-THEME_NAME-theme.br-accent:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-sub-title,br-list.br-THEME_NAME-theme.br-accent:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-title{color:'{{accent-light-6}}'}br-list.br-THEME_NAME-theme.br-warn br-item.br-selected{background-color:'{{warn-light-2}}'}br-list.br-THEME_NAME-theme.br-warn:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover{color:'{{warn-light-6}}';background-color:'{{warn-light-1}}'}br-list.br-THEME_NAME-theme.br-warn:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-sub-title,br-list.br-THEME_NAME-theme.br-warn:not(.br-touch):not(.br-no-hover) br-item:not(.br-no-hover):hover .br-item-title{color:'{{warn-light-6}}'}br-menu-content.br-THEME_NAME-theme{background-color:'{{foreground-light-4}}'}br-menu-content.br-THEME_NAME-theme br-menu-divider{background-color:'{{background-1}}'}br-radio-button.br-THEME_NAME-theme .br-off{border-color:'{{background-2}}'}br-radio-button.br-THEME_NAME-theme .br-on{background-color:'{{background-3}}'}br-radio-button.br-THEME_NAME-theme.br-checked .br-off{border-color:'{{background-3}}'}br-radio-button.br-THEME_NAME-theme.br-primary .br-off{border-color:'{{primary-light-1}}'}br-radio-button.br-THEME_NAME-theme:not([disabled]).br-primary .br-on{background-color:'{{primary-light-1}}'}br-radio-button.br-THEME_NAME-theme:not([disabled]).br-primary.br-checked .br-off{border-color:'{{primary-light-1}}'}br-radio-button.br-THEME_NAME-theme.br-accent .br-off{border-color:'{{accent-light-1}}'}br-radio-button.br-THEME_NAME-theme:not([disabled]).br-accent .br-on{background-color:'{{accent-light-1}}'}br-radio-button.br-THEME_NAME-theme:not([disabled]).br-accent.br-checked .br-off{border-color:'{{accent-light-1}}'}br-radio-button.br-THEME_NAME-theme.br-warn .br-off{border-color:'{{warn-light-1}}'}br-radio-button.br-THEME_NAME-theme:not([disabled]).br-warn .br-on{background-color:'{{warn-light-1}}'}br-radio-button.br-THEME_NAME-theme:not([disabled]).br-warn.br-checked .br-off{border-color:'{{warn-light-1}}'}br-radio-button.br-THEME_NAME-theme[disabled] .br-container .br-off,br-radio-button.br-THEME_NAME-theme[disabled] .br-container .br-on{border-color:'{{foreground-light-2}}'}br-radio-group.br-THEME_NAME-theme:focus:not(:empty){border-color:'{{foreground-default}}'}br-radio-button.br-THEME_NAME-theme .br-label{color:'{{font-default}}'}.br-select.br-THEME_NAME-theme .br-select-content{color:transparent}.br-select.br-THEME_NAME-theme.br-select-has-value .br-select-content,select.br-select-standard.ng-not-empty{color:'{{font-default}}'}.br-select.br-THEME_NAME-theme .br-select-content,select.br-select-standard{border-color:'{{foreground-dark-4}}'}.br-select.br-THEME_NAME-theme .br-select-content.br-disabled,select[disabled].br-select-standard{color:'{{foreground-light-2}}';border-color:transparent;background-image:linear-gradient(90deg,'{{foreground-light-3}}' 0,'{{foreground-light-3}}' 33%,transparent 0)}.br-select.br-THEME_NAME-theme ::placeholder{color:'{{font-light-5}}'}.br-select.br-THEME_NAME-theme .br-placeholder{color:'{{font-light-4}}'}.br-select.br-THEME_NAME-theme label,select.br-select-standard+label{color:'{{font-light-2}}'}.br-select.br-THEME_NAME-theme.br-select-has-placeholder .br-select-content{color:'{{font-light-3}}'}.br-select.br-THEME_NAME-theme.br-select-has-value .br-select-content{color:'{{font-default}}'}.br-select.br-THEME_NAME-theme.br-select-has-value label,.br-select.br-THEME_NAME-theme .br-select-icon,select.br-select-standard.ng-not-empty+label{color:'{{font-light-3}}'}.br-select.br-THEME_NAME-theme .br-select-content.br-disabled .br-select-icon{color:'{{font-light-5}}'}.br-select.br-THEME_NAME-theme.br-select-focused .br-select-content,select.br-select-standard:focus{border-color:'{{primary-default}}'}.br-select.br-THEME_NAME-theme.br-select-focused label,select.br-select-standard:focus+label{color:'{{primary-default}}'}.br-select.br-THEME_NAME-theme.br-select-focused.br-accent .br-select-content{border-color:'{{accent-light-1}}'}.br-select.br-THEME_NAME-theme.br-select-focused.br-accent label{color:'{{accent-default}}'}.br-select.br-THEME_NAME-theme.br-select-focused.br-warn .br-select-content{border-color:'{{warn-light-1}}'}.br-select.br-THEME_NAME-theme.br-select-focused.br-warn label{color:'{{warn-default}}'}br-side-content.br-THEME_NAME-theme{background-color:'{{foreground-light-4}}'}br-side-content.br-THEME_NAME-theme.br-border-left,br-side-content.br-THEME_NAME-theme.br-border-right{border-color:'{{background-1}}'}br-slider.br-THEME_NAME-theme .br-track{background-color:'{{foreground-light-2}}'}br-slider.br-THEME_NAME-theme .br-thumb,br-slider.br-THEME_NAME-theme .br-track.br-track-fill{background-color:'{{foreground-default}}'}br-slider.br-THEME_NAME-theme .br-slider-value{color:'{{font-light-2}}';background-color:'{{background-2}}'}br-slider.br-THEME_NAME-theme .br-focus-ring{border-color:'{{foreground-light-3}}'}br-slider.br-THEME_NAME-theme.br-primary .br-track.br-track-fill{background-color:'{{primary-default}}'}br-slider.br-THEME_NAME-theme.br-primary .br-thumb{border-color:'{{primary-default}}';background-color:'{{primary-default}}'}br-slider.br-THEME_NAME-theme.br-accent .br-track.br-track-fill{background-color:'{{accent-default}}'}br-slider.br-THEME_NAME-theme.br-accent .br-thumb{border-color:'{{accent-default}}';background-color:'{{accent-default}}'}br-slider.br-THEME_NAME-theme.br-warn .br-track.br-track-fill{background-color:'{{warn-default}}'}br-slider.br-THEME_NAME-theme.br-warn .br-thumb{border-color:'{{warn-default}}';background-color:'{{warn-default}}'}br-slider.br-THEME_NAME-theme[disabled] .br-thumb,br-slider.br-THEME_NAME-theme[disabled] .br-track{background-color:'{{background-2}}'}br-spinner.br-THEME_NAME-theme{background-color:transparent}br-spinner.br-THEME_NAME-theme .br-spinner-left .br-half-circle,br-spinner.br-THEME_NAME-theme .br-spinner-right .br-half-circle{border-right-color:'{{background-1}}';border-bottom-color:'{{background-1}}'}br-spinner.br-THEME_NAME-theme.br-primary .br-spinner-left .br-half-circle,br-spinner.br-THEME_NAME-theme.br-primary .br-spinner-right .br-half-circle{border-right-color:'{{primary-default}}';border-bottom-color:'{{primary-default}}'}br-spinner.br-THEME_NAME-theme.br-accent .br-spinner-left .br-half-circle,br-spinner.br-THEME_NAME-theme.br-accent .br-spinner-right .br-half-circle{border-right-color:'{{accent-default}}';border-bottom-color:'{{accent-default}}'}br-spinner.br-THEME_NAME-theme.br-warn .br-spinner-left .br-half-circle,br-spinner.br-THEME_NAME-theme.br-warn .br-spinner-right .br-half-circle{border-right-color:'{{warn-default}}';border-bottom-color:'{{warn-default}}'}.br-subheader.br-THEME_NAME-theme:not(.br-no-style) .br-subheader-inner{background:#f5f5f5}br-switch.br-THEME_NAME-theme .br-thumb{background-color:'{{background-1}}'}br-switch.br-THEME_NAME-theme.br-primary .br-thumb{background-color:'{{primary-light-1}}'}br-switch.br-THEME_NAME-theme.br-accent .br-thumb{background-color:'{{accent-light-1}}'}br-switch.br-THEME_NAME-theme.br-warn .br-thumb{background-color:'{{warn-light-1}}'}br-switch.br-THEME_NAME-theme .br-check{border-color:#fff}br-switch.br-THEME_NAME-theme.br-primary .br-check{border-color:'{{primary-light-6}}'}br-switch.br-THEME_NAME-theme.br-accent .br-check{border-color:'{{accent-light-6}}'}br-switch.br-THEME_NAME-theme.br-warn .br-check{border-color:'{{warn-light-6}}'}br-switch.br-THEME_NAME-theme.br-checked .br-thumb{background-color:#fff}br-switch.br-THEME_NAME-theme.br-checked .br-bar{background-color:'{{background-1}}'}br-switch.br-THEME_NAME-theme.br-checked.br-primary .br-thumb{background-color:'{{primary-default}}'}br-switch.br-THEME_NAME-theme.br-checked.br-primary .br-bar{background-color:'{{primary-light-3}}'}br-switch.br-THEME_NAME-theme.br-checked.br-accent .br-thumb{background-color:'{{accent-default}}'}br-switch.br-THEME_NAME-theme.br-checked.br-accent .br-bar{background-color:'{{accent-light-3}}'}br-switch.br-THEME_NAME-theme.br-checked.br-warn .br-thumb{background-color:'{{warn-default}}'}br-switch.br-THEME_NAME-theme.br-checked.br-warn .br-bar{background-color:'{{warn-light-3}}'}br-switch.br-THEME_NAME-theme[disabled] .br-thumb{background-color:'{{background-2}}'}br-switch.br-THEME_NAME-theme[disabled] .br-bar{background-color:'{{foreground-light-3}}'}br-switch.br-THEME_NAME-theme:focus .br-label:not(:empty){border-color:'{{foreground-default}}';border-style:dotted}br-switch.br-THEME_NAME-theme .br-label{color:'{{font-default}}'}br-table.br-THEME_NAME-theme br-th{color:'{{font-light-3}}'}br-table.br-THEME_NAME-theme br-th.active{color:'{{font-light-1}}'}br-table.br-THEME_NAME-theme br-td{color:'{{font-default}}'}br-tr{border-color:'{{foreground-default}}'}br-toast.br-THEME_NAME-theme.br-warn{background:'{{warn-default}}'}br-toast.br-THEME_NAME-theme.br-primary{background:'{{primary-default}}'}br-toast.br-THEME_NAME-theme.br-accent{background:'{{accent-default}}'}br-tooltip.br-THEME_NAME-theme{color:'{{font-light-6}}'}br-tooltip.br-THEME_NAME-theme .br-background{background-color:'{{background-5}}'}"); 
 })();
 
 }());
@@ -4205,383 +4205,6 @@ function brDialogService ($brMobile, $timeout, $document, $rootScope, $compile, 
 }());
 (function(){"use strict";/**
  * @ngdoc module
- * @name expander
- */
-angular
-  .module('brMaterial')
-  .directive('brExpander', expanderDirective)
-  .directive('brExpanderHeader', expanderHeaderDirective)
-  .directive('brExpanderContent', expanderContentDirective);
-
-
-
-
-/**
-  * @ngdoc directive
-  * @name brExpander
-  * @module expander
-  *
-  * @description
-  * The `<br-expander>` is a container that opens and closes
-  *
-  * @param {boolean=} br-width - Set expander width
-  * @param {boolean=} br-height - Set epander height, this will set scrolling in y
-  * @param {boolean=} br-open - Bound value for opening and closing
-  * @param {string=} br-component-id - Name that can be used with the `$brExpander` service
-  *
-  * @usage
-  * You can controll the expander in 3 ways.
-  * - The `<br-expander-header>` element will automatically expand when clicked
-  * - The `[br-open]` attribute will listen for changes
-  * - The `$brExpander` service has functions to control the expander based on its `[br-component-id]` name
-  *
-  * <hljs lang="js">
-  *   angular.controller('MyCtrl', function ($scope, $brExpander) {
-  *     $scope.isOpen = false;
-  *     $brExpander('expanderComponentId').open();
-  *     $brExpander('expanderComponentId').close();
-  *     $brExpander('expanderComponentId').toggle();
-  *     $brExpander('expanderComponentId').isOpen();
-  *   });
-  * </hljs>
-  *
-  * <hljs lang="html">
-  *    <br-expander br-open="isOpen" br-component-id="expanderComponentId">
-  *      <br-expander-header>Title</br-expander-header>
-  *
-  *      <br-expander-content>
-  *         <!-- content foes here -->
-  *      </br-expander-content>
-  *    </br-expander>
-  * </hljs>
-  */
-expanderDirective.$inject = ['$brTheme', '$parse'];
-function expanderDirective ($brTheme, $parse) {
-  var directive = {
-    restrict: 'E',
-    require: 'brExpander',
-    compile: compile,
-    controller: ['$element', '$attrs', '$brComponentRegistry', controller]
-  };
-  return directive;
-
-
-  function compile(tElement, tAttrs) {
-    tElement.addClass('br-expander');
-
-    var width = tAttrs.brWidth || tAttrs.width;
-    if (width !== undefined) {
-      tElement.css('width', width.replace('px', '') + 'px');
-    }
-
-    if (tAttrs.brHide === undefined) {
-      angular.element(tElement[0].querySelector('.br-expander-hide')).attr('ng-if', '$brOpen');
-    }
-
-
-    return postLink;
-  }
-
-  function postLink(scope, element, attr, ctrl) {
-    $brTheme(element);
-
-    // varefy the correct child elements exist
-    var headerElement = element[0].querySelector('br-expander-header');
-    var contentElement = element[0].querySelector('br-expander-content');
-    if (contentElement === null) {
-      throw new Error('<br-expander> : Should contain <br-expander-content>');
-    }
-
-    if (attr.brOpen !== undefined) {
-      var openGetter = $parse(attr.brOpen);
-      scope.$watch(function () { return openGetter(scope); }, function (open, oldOpen) {
-        if (open === oldOpen) { return; }
-
-        if (open === true) {
-          ctrl.open();
-        } else {
-          ctrl.close();
-        }
-      });
-    }
-  }
-
-
-  function controller($element, $attrs, $brComponentRegistry) {
-    /* jshint validthis: true */
-    var vm = this;
-
-    var _isOpen = false;
-
-    vm.height = $attrs.brHeight || $attrs.height;
-    vm.headerHook = headerHook;
-    vm.contentHook = contentHook;
-
-    vm.open = open;
-    vm.close = close;
-    vm.toggle = headerHook;
-    vm.isOpen = isOpen;
-
-
-    var destroy = $brComponentRegistry.register(vm, $attrs.brComponentId);
-    $element.on('$destroy', destroy);
-
-    function headerHook() {
-      _isOpen = !_isOpen;
-      setState();
-    }
-
-    function contentHook(func) {
-      if (typeof func !== 'function') { return; }
-      vm.contentHook = func;
-    }
-
-    function open() {
-      _isOpen = true;
-      setState();
-    }
-
-    function close() {
-      _isOpen = false;
-      setState();
-    }
-
-    function isOpen() {
-      return _isOpen;
-    }
-
-    function setState() {
-      $element.toggleClass('br-open', _isOpen);
-      vm.contentHook(_isOpen);
-    }
-  }
-}
-
-
-
-
-
-function expanderHeaderDirective() {
-  var directive = {
-    restrict: 'E',
-    require: '^?brExpander',
-    link: link
-  };
-  return directive;
-
-
-  function link (scope, element, attr, ctrl) {
-    element.append(angular.element('<div class="br-expander-icon-container"><div class="br-expander-icon"></div></div>'));
-    element.on('click', function () {
-      scope.$apply(function () {
-        ctrl.headerHook();
-      });
-    });
-  }
-}
-
-
-
-
-expanderContentDirective.$inject = ['$timeout', '$document'];
-function expanderContentDirective($timeout, $document) {
-  var directive = {
-    restrict: 'E',
-    require: '^?brExpander',
-    template:
-      '<div class="br-expander-hide" ng-transclude>'+
-      '</div>',
-    transclude: true,
-    link: link
-  };
-  return directive;
-
-
-  function link (scope, element, attr, ctrl) {
-    var killWatch;
-    var height = ctrl.height === undefined ? undefined : ctrl.height.replace('px', '') + 'px';
-
-    element.css('height', '0');
-
-
-    ctrl.contentHook(function (open) {
-      scope.$brOpen = open;
-
-      $timeout(function () {
-        if (open === true) {
-          expandContent();
-        } else {
-          contractContent();
-        }
-      }, 0);
-    });
-
-
-
-    function expandContent() {
-      element.css('height', getHeight());
-      element.css('overflow', 'auto');
-
-      if (!height) {
-        $timeout(function () {
-          element.css('height', 'auto');
-        }, 560);
-      }
-    }
-
-
-    function getHeight() {
-      if (height) {
-        return height;
-      } else {
-        return element[0].scrollHeight + 'px';
-      }
-    }
-
-
-    function contractContent() {
-      if (typeof killWatch === 'function') { killWatch(); }
-      element.css('height', getHeight());
-
-      $timeout(function () {
-        element.css('height', '0');
-      }, 100);
-    }
-  }
-}
-}());
-(function(){"use strict";angular
-  .module('brMaterial')
-  .factory('$brExpander', brExpanderService);
-
-
-
-/**
-  * @ngdoc service
-  * @name $brExapnder
-  * @module expander
-  *
-  * @description
-  * `$brExapnder` controls the `<br-expander>` element
-  *
-  * @usage
-  * The `$brExpander` service has functions to control the expander based on its `[br-component-id]` name
-  *
-  * <hljs lang="js">
-  *   angular.controller('MyCtrl', function ($scope, $brExpander) {
-  *     $scope.isOpen = false;
-  *     $brExpander('expanderComponentId').open();
-  *     $brExpander('expanderComponentId').close();
-  *     $brExpander('expanderComponentId').toggle();
-  *     $brExpander('expanderComponentId').isOpen();
-  *   });
-  * </hljs>
-  */
-brExpanderService.$inject = ['$brComponentRegistry', '$q'];
-function brExpanderService($brComponentRegistry, $q) {
-  return function (handle) {
-    var errorMsg = "Expander '" + handle + "' is not available!";
-    var instance = $brComponentRegistry.get(handle);
-
-    if(!instance) {
-      $brComponentRegistry.notFoundError(handle);
-    }
-
-    var service = {
-      isOpen: isOpen,
-      toggle: toggle,
-      open: open,
-      close: close,
-      then: then
-    };
-    return service;
-
-
-    /**
-     * @name isOpen
-     * @function
-     *
-     * @description
-     * Returns boolean telling if the side content is currently opened
-     *
-     * @return {boolean}
-     *
-     */
-    function isOpen() {
-      return instance && instance.isOpen();
-    }
-
-
-    /**
-     * @name toggle
-     * @function
-     *
-     * @description
-     * Toggles open closed state. This will only close if the locked open state is false
-     *
-     */
-    function toggle() {
-      return instance ? instance.toggle() : $q.reject(errorMsg);
-    }
-
-
-
-    /**
-     * @name open
-     * @function
-     *
-     * @description
-     * Toggles content open state
-     *
-     */
-    function open() {
-      return instance ? instance.open() : $q.reject(errorMsg);
-    }
-
-
-    /**
-     * @name close
-     * @function
-     *
-     * @description
-     * Toggles closed state. This will only close if the locked open state is false
-     *
-     */
-    function close() {
-      return instance ? instance.close() : $q.reject(errorMsg);
-    }
-
-
-    /**
-     * @name then
-     * @function
-     *
-     * @description
-     * Function called post operation
-     *
-     */
-    function then(callbackFn) {
-      var promise = instance ? $q.when(instance) : waitForInstance();
-      return promise.then( callbackFn || angular.noop );
-    }
-
-
-
-
-    function waitForInstance() {
-      return $brComponentRegistry
-        .when(handle)
-        .then(function (it) {
-          instance = it;
-          return it;
-        });
-    }
-
-  };
-}
-}());
-(function(){"use strict";/**
- * @ngdoc module
  * @name dragOrder
  * @description
  * dragOrder
@@ -5056,6 +4679,383 @@ function brDragIconDirective($brGesture) {
   }
 }
 }());
+(function(){"use strict";/**
+ * @ngdoc module
+ * @name expander
+ */
+angular
+  .module('brMaterial')
+  .directive('brExpander', expanderDirective)
+  .directive('brExpanderHeader', expanderHeaderDirective)
+  .directive('brExpanderContent', expanderContentDirective);
+
+
+
+
+/**
+  * @ngdoc directive
+  * @name brExpander
+  * @module expander
+  *
+  * @description
+  * The `<br-expander>` is a container that opens and closes
+  *
+  * @param {boolean=} br-width - Set expander width
+  * @param {boolean=} br-height - Set epander height, this will set scrolling in y
+  * @param {boolean=} br-open - Bound value for opening and closing
+  * @param {string=} br-component-id - Name that can be used with the `$brExpander` service
+  *
+  * @usage
+  * You can controll the expander in 3 ways.
+  * - The `<br-expander-header>` element will automatically expand when clicked
+  * - The `[br-open]` attribute will listen for changes
+  * - The `$brExpander` service has functions to control the expander based on its `[br-component-id]` name
+  *
+  * <hljs lang="js">
+  *   angular.controller('MyCtrl', function ($scope, $brExpander) {
+  *     $scope.isOpen = false;
+  *     $brExpander('expanderComponentId').open();
+  *     $brExpander('expanderComponentId').close();
+  *     $brExpander('expanderComponentId').toggle();
+  *     $brExpander('expanderComponentId').isOpen();
+  *   });
+  * </hljs>
+  *
+  * <hljs lang="html">
+  *    <br-expander br-open="isOpen" br-component-id="expanderComponentId">
+  *      <br-expander-header>Title</br-expander-header>
+  *
+  *      <br-expander-content>
+  *         <!-- content foes here -->
+  *      </br-expander-content>
+  *    </br-expander>
+  * </hljs>
+  */
+expanderDirective.$inject = ['$brTheme', '$parse'];
+function expanderDirective ($brTheme, $parse) {
+  var directive = {
+    restrict: 'E',
+    require: 'brExpander',
+    compile: compile,
+    controller: ['$element', '$attrs', '$brComponentRegistry', controller]
+  };
+  return directive;
+
+
+  function compile(tElement, tAttrs) {
+    tElement.addClass('br-expander');
+
+    var width = tAttrs.brWidth || tAttrs.width;
+    if (width !== undefined) {
+      tElement.css('width', width.replace('px', '') + 'px');
+    }
+
+    if (tAttrs.brHide === undefined) {
+      angular.element(tElement[0].querySelector('.br-expander-hide')).attr('ng-if', '$brOpen');
+    }
+
+
+    return postLink;
+  }
+
+  function postLink(scope, element, attr, ctrl) {
+    $brTheme(element);
+
+    // varefy the correct child elements exist
+    var headerElement = element[0].querySelector('br-expander-header');
+    var contentElement = element[0].querySelector('br-expander-content');
+    if (contentElement === null) {
+      throw new Error('<br-expander> : Should contain <br-expander-content>');
+    }
+
+    if (attr.brOpen !== undefined) {
+      var openGetter = $parse(attr.brOpen);
+      scope.$watch(function () { return openGetter(scope); }, function (open, oldOpen) {
+        if (open === ctrl.isOpen()) { return; }
+
+        if (open === true) {
+          ctrl.open();
+        } else {
+          ctrl.close();
+        }
+      });
+    }
+  }
+
+
+  function controller($element, $attrs, $brComponentRegistry) {
+    /* jshint validthis: true */
+    var vm = this;
+
+    var _isOpen = false;
+
+    vm.height = $attrs.brHeight || $attrs.height;
+    vm.headerHook = headerHook;
+    vm.contentHook = contentHook;
+
+    vm.open = open;
+    vm.close = close;
+    vm.toggle = headerHook;
+    vm.isOpen = isOpen;
+
+
+    var destroy = $brComponentRegistry.register(vm, $attrs.brComponentId);
+    $element.on('$destroy', destroy);
+
+    function headerHook() {
+      _isOpen = !_isOpen;
+      setState();
+    }
+
+    function contentHook(func) {
+      if (typeof func !== 'function') { return; }
+      vm.contentHook = func;
+    }
+
+    function open() {
+      _isOpen = true;
+      setState();
+    }
+
+    function close() {
+      _isOpen = false;
+      setState();
+    }
+
+    function isOpen() {
+      return _isOpen;
+    }
+
+    function setState() {
+      $element.toggleClass('br-open', _isOpen);
+      vm.contentHook(_isOpen);
+    }
+  }
+}
+
+
+
+
+
+function expanderHeaderDirective() {
+  var directive = {
+    restrict: 'E',
+    require: '^?brExpander',
+    link: link
+  };
+  return directive;
+
+
+  function link (scope, element, attr, ctrl) {
+    element.append(angular.element('<div class="br-expander-icon-container"><div class="br-expander-icon"></div></div>'));
+    element.on('click', function () {
+      scope.$apply(function () {
+        ctrl.headerHook();
+      });
+    });
+  }
+}
+
+
+
+
+expanderContentDirective.$inject = ['$timeout', '$document'];
+function expanderContentDirective($timeout, $document) {
+  var directive = {
+    restrict: 'E',
+    require: '^?brExpander',
+    template:
+      '<div class="br-expander-hide" ng-transclude>'+
+      '</div>',
+    transclude: true,
+    link: link
+  };
+  return directive;
+
+
+  function link (scope, element, attr, ctrl) {
+    var killWatch;
+    var height = ctrl.height === undefined ? undefined : ctrl.height.replace('px', '') + 'px';
+
+    element.css('height', '0');
+
+
+    ctrl.contentHook(function (open) {
+      scope.$brOpen = open;
+
+      $timeout(function () {
+        if (open === true) {
+          expandContent();
+        } else {
+          contractContent();
+        }
+      }, 0);
+    });
+
+
+
+    function expandContent() {
+      element.css('height', getHeight());
+      element.css('overflow', 'auto');
+
+      if (!height) {
+        $timeout(function () {
+          element.css('height', 'auto');
+        }, 560);
+      }
+    }
+
+
+    function getHeight() {
+      if (height) {
+        return height;
+      } else {
+        return element[0].scrollHeight + 'px';
+      }
+    }
+
+
+    function contractContent() {
+      if (typeof killWatch === 'function') { killWatch(); }
+      element.css('height', getHeight());
+
+      $timeout(function () {
+        element.css('height', '0');
+      }, 100);
+    }
+  }
+}
+}());
+(function(){"use strict";angular
+  .module('brMaterial')
+  .factory('$brExpander', brExpanderService);
+
+
+
+/**
+  * @ngdoc service
+  * @name $brExapnder
+  * @module expander
+  *
+  * @description
+  * `$brExapnder` controls the `<br-expander>` element
+  *
+  * @usage
+  * The `$brExpander` service has functions to control the expander based on its `[br-component-id]` name
+  *
+  * <hljs lang="js">
+  *   angular.controller('MyCtrl', function ($scope, $brExpander) {
+  *     $scope.isOpen = false;
+  *     $brExpander('expanderComponentId').open();
+  *     $brExpander('expanderComponentId').close();
+  *     $brExpander('expanderComponentId').toggle();
+  *     $brExpander('expanderComponentId').isOpen();
+  *   });
+  * </hljs>
+  */
+brExpanderService.$inject = ['$brComponentRegistry', '$q'];
+function brExpanderService($brComponentRegistry, $q) {
+  return function (handle) {
+    var errorMsg = "Expander '" + handle + "' is not available!";
+    var instance = $brComponentRegistry.get(handle);
+
+    if(!instance) {
+      $brComponentRegistry.notFoundError(handle);
+    }
+
+    var service = {
+      isOpen: isOpen,
+      toggle: toggle,
+      open: open,
+      close: close,
+      then: then
+    };
+    return service;
+
+
+    /**
+     * @name isOpen
+     * @function
+     *
+     * @description
+     * Returns boolean telling if the side content is currently opened
+     *
+     * @return {boolean}
+     *
+     */
+    function isOpen() {
+      return instance && instance.isOpen();
+    }
+
+
+    /**
+     * @name toggle
+     * @function
+     *
+     * @description
+     * Toggles open closed state. This will only close if the locked open state is false
+     *
+     */
+    function toggle() {
+      return instance ? instance.toggle() : $q.reject(errorMsg);
+    }
+
+
+
+    /**
+     * @name open
+     * @function
+     *
+     * @description
+     * Toggles content open state
+     *
+     */
+    function open() {
+      return instance ? instance.open() : $q.reject(errorMsg);
+    }
+
+
+    /**
+     * @name close
+     * @function
+     *
+     * @description
+     * Toggles closed state. This will only close if the locked open state is false
+     *
+     */
+    function close() {
+      return instance ? instance.close() : $q.reject(errorMsg);
+    }
+
+
+    /**
+     * @name then
+     * @function
+     *
+     * @description
+     * Function called post operation
+     *
+     */
+    function then(callbackFn) {
+      var promise = instance ? $q.when(instance) : waitForInstance();
+      return promise.then( callbackFn || angular.noop );
+    }
+
+
+
+
+    function waitForInstance() {
+      return $brComponentRegistry
+        .when(handle)
+        .then(function (it) {
+          instance = it;
+          return it;
+        });
+    }
+
+  };
+}
+}());
 (function(){"use strict";angular
   .module('brMaterial')
   .directive('brCardCollapsed', collapsedContentDirective);
@@ -5181,10 +5181,7 @@ function expandedContentDirective($animateCss, $brUtil, $timeout) {
       .then(function () {
         container.removeClass('br-overflow');
         container.css('max-height', 'none');
-
-        $timeout(function () {
-          enableSubHeaders();
-        }, 500);
+        enableSubHeaders();
       });
     }
 
@@ -5353,8 +5350,10 @@ function expansionCardDirective($timeout, $parse, $brUtil) {
       var collHeight = $element[0].querySelector('.br-card-collapsed').offsetHeight;
       $element.css('min-height', collHeight + 1 + 'px');
 
+
       // recheck height
       // NOTE this solves a problem when multiple cards are added at the same time
+      // TODO find a better solution to getting height when animation is cut short by adding multiple cards at the same time
       $timeout(function () {
         if (vm.isExpanded !== true && $element[0].querySelector('.br-card-collapsed').offsetHeight !== collHeight) {
           $element.css('min-height', $element[0].querySelector('.br-card-collapsed').offsetHeight + 1 + 'px');
@@ -5563,7 +5562,7 @@ function exapnsionCardService($rootScope, $compile, $q, $controller, $brComponen
    * @param {string} [options.controller] - controller
    * @param {string} [options.controllerAs] - controller as name
    */
-  function add(options, locals) {
+  function add(options, locals, closed) {
     options = options || {};
     var deferred = $q.defer();
 
@@ -5849,7 +5848,7 @@ function expansionCardManagerDirective() {
 
 
     // TODO allow for passing of objects into the scope
-    function add(componentId, locals) {
+    function add(componentId, locals, closed) {
       if (componentId === undefined) {
         throw Error('$brExpansionCardManager registry.add() : Must provide a componentId parameter');
       }
@@ -5858,7 +5857,7 @@ function expansionCardManagerDirective() {
         throw Error("$brExpansionCardManager registry '" + componentId + "' is not available!");
       }
 
-      return $brExpansionCard.add(registry[componentId], locals).then();
+      return $brExpansionCard.add(registry[componentId], locals, closed).then();
     }
 
     function _remove(componentId) {
@@ -6062,89 +6061,66 @@ angular
   * @param {HEX=} br-color - The color. If you place icons in button they will inherit the buttons color
   * @param {string} br-font-icon - The values you can use
   *
-  * - alarm
-  * - schedule
-  * - account_box
+  * - organization
+  * - account
   * - add
-  * - add_a_photo
-  * - alarm_add
-  * - add_alert
-  * - add_box
-  * - add_circle
-  * - add_shopping_cart
-  * - alarm_off
   * - announcement
-  * - arrow_back
-  * - arrow_downward
-  * - arrow_forward
-  * - arrow_upward
-  * - close
   * - poll
   * - flag
-  * - attach_file
-  * - cloud_upload
-  * - battery_alert
-  * - battery_charging_full
-  * - battery_std
-  * - battery_unknown
+  * - money
   * - block
   * - turned_in
-  * - phone
-  * - cancel
-  * - chat
   * - chat_bubble
-  * - cloud_download
+  * - close
   * - photo_library
   * - edit
   * - payment
-  * - crop
-  * - crop_rotate
-  * - dehaze
-  * - not_interested
-  * - done_all
-  * - error
-  * - event_available
-  * - event_busy
-  * - event_note
-  * - favorite
-  * - favorite_border
+  * - delete
+  * - done
+  * - dashboard
+  * - events
+  * - seat
+  * - download
   * - filter_list
-  * - question_answer
-  * - forward
-  * - help
+  * - star
+  * - labor
+  * - help_outline
+  * - home
   * - photo
+  * - info
+  * - info_outline
   * - keyboard_arrow_down
   * - keyboard_arrow_left
   * - keyboard_arrow_right
   * - keyboard_arrow_up
-  * - linear_scale
-  * - local_bar
+  * - bucks
   * - local_cafe
-  * - restaurant_menu
+  * - menu
   * - local_drink
   * - shopping_cart
+  * - local_library
   * - local_offer
+  * - venue
   * - room
-  * - more_horiz
+  * - lock_open
+  * - lock_outline
   * - more_vert
   * - notifications
-  * - notifications_active
-  * - notifications_none
-  * - notifications_off
-  * - notifications_paused
-  * - pause
-  * - play_arrow
-  * - power_settings_new
-  * - priority_high
+  * - person_outline
+  * - person
+  * - person_add
   * - refresh
+  * - save
   * - search
   * - settings
   * - sort_by_alpha
+  * - suite
+  * - location
   * - swap_horiz
   * - swap_vert
-  * - zoom_in
-  * - zoom_out
-  * - zoom_out_map
+  * - tablet_mac
+  * - view_list
+  * - gateway
   *
   * @usage
   * <hljs lang="html">
@@ -8338,7 +8314,7 @@ rippleController.$inject = ['$scope', '$element', '$window', '$timeout', '$brUti
 function rippleController ($scope, $element, $window, $timeout, $brUtil) {
   /*jshint validthis:true */
   var vm = this;
-
+  
   var mousedown = false;
   var lastRipple = null;
   var timeout = null;
@@ -9943,8 +9919,6 @@ function brStickyService($document, $$rAF, $brUtil, $timeout, $brConstant) {
     function setCurrentItem(item) {
       if (self.current === item && self.current !== undefined) { return; }
 
-      // if (item !== undefined && self.items.length === 0)
-
       if (self.current) {
         translate(self.current, null);
         setStickyState(self.current, null);
@@ -10319,8 +10293,8 @@ var selectNextId = 0;
   * @param {number} [inner-width] - width of table scroll area
   * @param {object} [br-filter] - object containing keys that match the table data with values to search on
   */
-tableDirective.$inject = ['$brUtil', '$brTheme', '$parse'];
-function tableDirective($brUtil, $brTheme, $parse) {
+tableDirective.$inject = ['$brUtil', '$brTheme', '$parse', '$window', '$$rAF'];
+function tableDirective($brUtil, $brTheme, $parse, $window, $$rAF) {
   var directive = {
     restrict: 'E',
     require: ['brTable', '?ngModel'],
@@ -10337,6 +10311,7 @@ function tableDirective($brUtil, $brTheme, $parse) {
     var innerWidth = tAttrs.brInnerWidth || tAttrs.innerWidth;
     var width = tAttrs.brWidth || tAttrs.width;
     var height = tAttrs.brHeight || tAttrs.height;
+    var autoHeight = tAttrs.brAutoHeight;
 
     if (width !== undefined) {
       tElement.css('width', $brUtil.valueToCss(width));
@@ -10386,6 +10361,26 @@ function tableDirective($brUtil, $brTheme, $parse) {
       });
     } else {
       headElement.css('width', '100%');
+    }
+
+
+    if (attrs.brHeight === undefined && attrs.brAutoHeight !== false) {
+      var debouncedUpdateAll = $$rAF.throttle(updateAll);
+      debouncedUpdateAll();
+
+      scope.$watch(function () { return element[0].offsetHeight; }, function (data){
+        debouncedUpdateAll();
+      });
+
+      angular.element($window).on('resize', debouncedUpdateAll);
+      scope.$on('$destroy', function () {
+        angular.element($window).off('resize', debouncedUpdateAll);
+      });
+    }
+
+    function updateAll() {
+      var rect = element[0].getBoundingClientRect();
+      element.css('height', ($window.innerHeight - rect.top) + 'px');
     }
 
 
