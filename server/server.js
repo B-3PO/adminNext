@@ -18,6 +18,10 @@ var dataManager = require('../devModules/expressJam');
 var organizations = require('./modules/organizations')(app, dataManager);
 var venues = require('./modules/venues')(app, dataManager);
 var locations = require('./modules/locations')(app, dataManager);
+var menus = require('./modules/menus')(app, dataManager);
+var categories = require('./modules/categories')(app, dataManager);
+var menuItems = require('./modules/menu_items')(app, dataManager);
+var modifiers = require('./modules/modifiers')(app, dataManager);
 
 
 
@@ -57,6 +61,10 @@ app.use('/auth', authorizeRoute);
 organizations.initRoutes();
 venues.initRoutes();
 locations.initRoutes();
+menus.initRoutes();
+categories.initRoutes();
+menuItems.initRoutes();
+modifiers.initRoutes();
 
 
 app.post('/api/search', function(req, res) {

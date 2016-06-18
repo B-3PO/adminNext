@@ -86,6 +86,11 @@
   opacity: 1
 }
 
+.orgcard-hint.large {
+  font-size: 15px;
+  font-weight: 500;
+}
+
 .orgcard-hint.ng-enter {
   opacity: 0;
   transition: opacity 0.2s linear;
@@ -93,4 +98,21 @@
 
 .orgcard-hint.ng-enter.ng-enter-active {
   opacity: 1;
+}
+
+.br-item-title {
+  font-size: 16px !important;
+  font-weight: 500;
+}
+
+.br-item-info {
+  font-size: 13px;
+}
+
+
+.comma-list {
+  padding-right: 4px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

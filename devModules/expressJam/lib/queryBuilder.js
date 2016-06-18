@@ -17,7 +17,7 @@ function createQueryBuilder() {
   var query = '';
   var table = '';
   var whereId;
-  var joins = [];
+  var joinByType = {};
 
   return {
     build: build,
@@ -99,13 +99,23 @@ function createQueryBuilder() {
   function addRelation(relation, parentRelation) {
     addAttributes(relation.resource.type);
 
+    if (joinByType[relation.resource.name] === undefined) {
+      joinByType[relation.resource.name] = {
+        manyToMany: relation.manyToMany,
+        oneToMany: relation.oneToMany,
+        relationJoins: [],
+        resourceOns: []
+      };
+    }
+
     if (relation.manyToMany === true) {
-      joins.push('left join ' + relation.table + ' on ' + relation.table+'.'+relation.parentField + ' = ' + (parentRelation.table || table)+'.id');
-      joins.push('left join ' + relation.resource.type.table + ' on ' + relation.resource.type.table+'.id = ' + relation.table+'.'+relation.field);
+      joinByType[relation.resource.name].relationJoins.push('left join ' + relation.table + ' on ' + relation.table+'.'+relation.parentField + ' = ' + (parentRelation.resource ? parentRelation.resource.type.table || parentRelation.table || table : parentRelation.table || table)+'.id');
+      joinByType[relation.resource.name].resourceJoin = 'left join ' + relation.resource.type.table + ' on ';
+      joinByType[relation.resource.name].resourceOns.push(relation.resource.type.table+'.id = ' + relation.table+'.'+relation.field);
     } else if (relation.oneToMany === true) {
-      joins.push('left join ' + relation.resource.type.table + ' on ' + relation.resource.type.table+'.'+relation.field + ' = ' + (parentRelation.table || table)+'.id');
+      joinByType[relation.resource.name].relationJoins.push('left join ' + relation.resource.type.table + ' on ' + relation.resource.type.table+'.'+relation.field + ' = ' + (parentRelation.resource ? parentRelation.resource.type.table || parentRelation.table || table : parentRelation.table || table)+'.id');
     } else {
-      joins.push('left join ' + relation.resource.type.table + ' on ' + relation.resource.type.table+'.id' + ' = ' + relation.table+'.'+relation.field);
+      joinByType[relation.resource.name].relationJoins.push('left join ' + relation.resource.type.table + ' on ' + relation.resource.type.table+'.id' + ' = ' + relation.table+'.'+relation.field);
     }
   }
 
@@ -183,7 +193,13 @@ function createQueryBuilder() {
 
     query += ' from ' + table + '\n';
 
-    query += joins.reduce(function (a, b) {
+    query += Object.keys(joinByType).map(function (key) {
+      if (joinByType[key].manyToMany === true) {
+        return joinByType[key].relationJoins.join(' ') + '\n' + joinByType[key].resourceJoin + joinByType[key].resourceOns.join(' or ');
+      } else {
+        return joinByType[key].relationJoins.join(' ');
+      }
+    }).reduce(function (a, b) {
       return a + b + '\n';
     }, '');
 
@@ -230,7 +246,9 @@ function createQueryBuilder() {
       if (!(typeAttrs[key] instanceof Array)) {
 
         // TODO do i need to wory about converting any other data types here?
-        if (typeAttrs[key].dataType === 'boolean') {
+        if (typeAttrs[key].parse !== undefined) {
+          data[typeAttrs[key].field] = typeAttrs[key].parse(dataAttrs[key]);
+        } else if (typeAttrs[key].dataType === 'boolean') {
           data[typeAttrs[key].field] = dataTypes.revert['boolean'](dataAttrs[key]);
         } else {
           data[typeAttrs[key].field] = dataAttrs[key];

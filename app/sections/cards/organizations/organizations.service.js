@@ -8,7 +8,7 @@ organizationsService.$inject = ['jsonApiManager', 'authService', 'scopeIds'];
 function organizationsService(jsonApiManager, authService, scopeIds) {
   var organizationsManager = jsonApiManager.create({
     url: 'organizations',
-    include: ['venues.locations']
+    include: ['menus.categories.menuItems.modifiers.modifierOptions', 'venues.locations']
   }, function (error) {
     console.log(error);
   });

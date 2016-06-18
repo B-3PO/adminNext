@@ -2,9 +2,9 @@
 
 
   <br-card-collapsed>
-    <div class="orgcard-title">Edit Venue</div>
+    <div class="orgcard-title">{{vm.venue.name}}</div>
     <div layout="row">
-      <div class="orgcard-hint"><b>organization</b> {{vm.organization.name}}</div>
+      <div class="orgcard-hint large">venue</div>
     </div>
   </br-card-collapsed>
 
@@ -15,14 +15,18 @@
     <br-subheader br-no-style>
       <div class="card-header">
         <div>
-          <h2>Edit Venue</h2>
+          <h2>Venue - {{vm.venue.name}}</h2>
           <div class="sub-h2"><b>organization</b> {{vm.organization.name}}</div>
         </div>
         <div flex></div>
 
-        <div layout="row">
-          <br-button class="br-warn br-raised" ng-click="vm.cancel()">Cancel</br-button>
+        <div ng-if="vm.edited" layout="row">
+          <br-button class="br-warn br-raised" ng-click="vm.cancel()">Cancel Changes</br-button>
           <br-button class="br-accent br-raised" ng-click="vm.save()" ng-disabled="venueForm.$invalid">Save</br-button>
+        </div>
+
+        <div ng-if="!vm.edited && $card.topCard === false" layout="row">
+          <br-button class="br-primary" ng-click="vm.cancel()">Done<br-icon br-font-icon="close"></br-icon></br-button>
         </div>
       </div>
     </br-subheader>

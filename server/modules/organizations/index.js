@@ -19,6 +19,10 @@ function addRoutes(app, dataManager) {
         resource: 'venues',
         oneToMany: true,
         field: 'organizations_id'
+      },
+      menus: {
+        resource: 'menus',
+        manyToMany: true
       }
     }
   }));

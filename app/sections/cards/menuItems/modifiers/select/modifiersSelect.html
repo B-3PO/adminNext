@@ -1,0 +1,59 @@
+<br-expansion-card>
+
+  <br-card-collapsed>
+    <div class="orgcard-title">Select Modifier</div>
+    <div layout="row">
+      <div class="orgcard-hint larg">modifier</div>
+    </div>
+  </br-card-collapsed>
+
+
+
+  <br-card-expanded>
+    <br-subheader br-no-style>
+      <div class="card-header">
+        <div>
+          <h2>Select Modifier</h2>
+        </div>
+        <div flex></div>
+
+        <div layout="row">
+          <br-button class="br-warn br-raised" ng-click="vm.close()">close</br-button>
+        </div>
+      </div>
+    </br-subheader>
+
+
+    <br-card-content>
+      <div layout="row" class="filter-bar">
+        <br-icon br-font-icon="search" style="line-height: 53px; padding-left: 12px; "></br-icon>
+        <input flex type="search" br-no-style ng-model="vm.filter" placeholder="Search..." />
+
+        <br-button class="br-accent br-raised" ng-click="vm.createModifier();" ng-disabled="vm.loaded === false"><br-icon br-font-icon="add"></br-icon>Modifier</br-button>
+      </div>
+
+
+      <br-list>
+        <br-item ng-repeat="modifier in vm.modifiersList | filter:vm.filter">
+          <br-item-content class="br-fill">
+            <div layout="row" layout-align="start center">
+              <div>
+                <div flex class="br-item-title">{{modifier.name}}</div>
+                <div layout="column" layout-fill class="br-item-info">
+                  <div ng-repeat="option in modifier.modifierOptions">
+                    {{option.name}}
+                  </div>
+                </div>
+              </div>
+              <div flex></div>
+              <br-button class="br-primary" ng-click="vm.editModifier(modifier.id)"><br-icon br-font-icon="edit"></br-icon>edit</br-button>
+              <br-button class="br-primary" ng-click="vm.add(modifier)"><br-icon br-font-icon="add"></br-icon>Select</br-button>
+            </div>
+          </br-item-content>
+        </br-item>
+      </br-list>
+
+    </br-card-content>
+  </br-card-expanded>
+
+</br-expansion-card>

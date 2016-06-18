@@ -8,13 +8,13 @@
 
     <div class="nav-menu-item" ng-if="item.url !== undefined">
 
-      <br-button ng-if="!item.action" ng-href="#/{{item.url}}">
+      <br-button ng-href="#/{{item.url}}">
         <br-icon ng-if="item.icon" br-font-icon="{{item.icon}}"></br-icon>
         {{item.label}}
       </br-button>
 
 
-      <br-button ng-if="item.action" ng-href="#/{{item.url}}">
+      <!-- <br-button ng-if="item.action" ng-href="#/{{item.url}}">
         <div layout="row" class="nav-item-action-container">
           <br-icon ng-if="item.icon" br-font-icon="{{item.icon}}"></br-icon>
           <div layout="column">
@@ -22,13 +22,13 @@
             <div class="nav-item-action-label-title">{{item.label}}</div>
           </div>
         </div>
-      </br-button>
+      </br-button> -->
     </div>
 
     <br-expander ng-if="item.links !== undefined" br-open="item.links.length < 5">
       <br-expander-header>
         <br-icon ng-if="item.icon" br-font-icon="{{item.icon}}"></br-icon>
-        {{item.label}}
+        {{item.label}} ({{item.links.length}})
       </br-expander-header>
 
       <br-expander-content>

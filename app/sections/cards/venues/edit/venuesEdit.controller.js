@@ -3,11 +3,12 @@ angular
   .controller('VenuesEditController', VenuesEditController);
 
 
-VenuesEditController.$inject = ['$scope', '$brExpansionCardManager', 'organizationsService', 'venuesId', 'US_STATES'];
-function VenuesEditController($scope, $brExpansionCardManager, organizationsService, venuesId, US_STATES) {
+VenuesEditController.$inject = ['$scope', '$brExpansionCardManager', 'organizationsService', 'watchForEdit', 'venuesId', 'organizationsId', 'US_STATES'];
+function VenuesEditController($scope, $brExpansionCardManager, organizationsService, watchForEdit, venuesId, organizationsId, US_STATES) {
   var vm = this;
 
   organizationsService.registerScope($scope, [vm]);
+  organizationsService.bind(vm, 'organization', 'organizations', organizationsId);
   organizationsService.bind(vm, 'venue', 'venues', venuesId);
   organizationsService.get();
 
@@ -17,11 +18,26 @@ function VenuesEditController($scope, $brExpansionCardManager, organizationsServ
   vm.cancel = cancel;
 
 
+  function checkChanges() {
+    vm.edited = false;
+    watchForEdit.watch(vm, 'venue', $scope, function () {
+      vm.edited = true;
+    });
+  }
+  checkChanges();
+
+
   function save() {
     organizationsService.applyChanges();
+    if ($scope.$card.topCard === false) {
+      $scope.$card.remove();
+    } else { checkChanges(); }
   }
 
   function cancel() {
-    $scope.$card.remove();
+    organizationsService.removeChanges();
+    if ($scope.$card.topCard === false) {
+      $scope.$card.remove();
+    } else { checkChanges(); }
   }
 }

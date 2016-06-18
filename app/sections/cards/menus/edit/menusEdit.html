@@ -1,0 +1,103 @@
+<br-expansion-card>
+
+  <br-card-collapsed>
+    <div class="orgcard-title">{{vm.menu.name}}</div>
+    <div layout="row">
+      <div class="orgcard-hint large">Menu</div>
+    </div>
+  </br-card-collapsed>
+
+
+
+  <br-card-expanded>
+    <br-subheader br-no-style>
+      <div class="card-header">
+        <div>
+          <h2>Menu - {{vm.menu.name}}</h2>
+          <div class="sub-h2"><b>{{vm.ownerType}}</b> {{vm.owner.name}}</div>
+        </div>
+        <div flex></div>
+
+        <div ng-if="vm.edited" layout="row">
+          <br-button class="br-warn br-raised" ng-click="vm.cancel()">Cancel Changes</br-button>
+          <br-button class="br-accent br-raised" ng-click="vm.save()" ng-disabled="form.$invalid">Save</br-button>
+        </div>
+
+        <div ng-if="!vm.edited && $card.topCard === false" layout="row">
+          <br-button class="br-primary" ng-click="vm.cancel()">Done<br-icon br-font-icon="close"></br-icon></br-button>
+        </div>
+      </div>
+    </br-subheader>
+
+
+    <br-card-content>
+      <form name="form">
+        <div layout="row" layout-wrap>
+          <br-input flex class="br-fill">
+            <label>Menu Name</label>
+            <input name="name" ng-model="vm.menu.name" placeholder="Enter Name" required />
+            <div ng-messages="form.name.$error">
+              <div ng-message="required">Name Required</div>
+            </div>
+          </br-input>
+
+          <br-select flex>
+            <label>Type</label>
+            <br-select-menu name="type" ng-model="vm.menu.type" placeholder="Select Type" required>
+              <br-option ng-value="type" ng-repeat="type in vm.types">{{type}}</br-option>
+            </br-select-menu>
+          </br-select>
+        </div>
+      </form>
+
+
+      <h4>Menu Items</h4>
+
+      <div layout="row" class="filter-bar">
+        <br-icon br-font-icon="search" style="line-height: 53px; padding-left: 12px; "></br-icon>
+        <input flex type="search" br-no-style ng-model="vm.filter" placeholder="Search..." />
+
+        <br-button ng-disabled="vm.loaded === false" ng-click="vm.categoriesOpen = !vm.categoriesOpen">{{vm.categoriesOpen ? 'Close' : 'Open'}}</br-button>
+        <br-button class="br-accent" ng-click="vm.createCategory();" ng-disabled="vm.loaded === false"><br-icon br-font-icon="add"></br-icon>Category</br-button>
+      </div>
+
+
+
+      <div>
+        <br-expander ng-if="!vm.filter || (category.menuItems | filter:vm.filter).length" br-open="vm.categoriesOpen && category.menuItems.length < 6" ng-repeat="category in vm.menu.categories | filter:vm.filter | orderBy:'order'">
+          <br-expander-header style="background: #d9e6f4;">
+            <div layout="row" layout-fill>
+              <br-icon style="padding: 13px;" br-font-icon="{{category.type === 'beverage' ? 'drink' : category.type === 'alcohol' ? 'alcohol' : 'menu'}}"></br-icon>
+              <div class="br-item-title" style="padding-left: 12px;" flex>{{category.name}} <span class="br-item-info">({{category.menuItems.length}})</span></div>
+              <br-button class="br-accent" ng-click="vm.createMenuItem(category.id)"><br-icon br-font-icon="add"></br-icon>Item</br-button>
+              <br-button ng-click="vm.editCategory(category.id)"><br-icon br-font-icon="edit"></br-icon>Edit</br-button>
+            </div>
+          </br-expander-header>
+
+          <br-expander-content style="padding-left: 16px; background: #f4f4f4;">
+            <div style="background: #FFF;">
+              <br-list>
+                <br-item ng-repeat="menuItem in category.menuItems | filter:vm.filter">
+                  <br-item-content class="br-fill">
+                    <div layout="row" layout-align="start center">
+                      <div>
+                        <div flex class="br-item-title">{{menuItem.name}}</div>
+                        <div layout="row" layout-fill class="br-item-info">
+                          <div flex><b>Price</b> {{menuItem.price | currency}}</div>
+                        </div>
+                      </div>
+                      <div flex></div>
+                      <br-button class="br-primary" ng-click="vm.editMenuItem(category.id, menuItem.id)"><br-icon br-font-icon="edit"></br-icon>Edit</br-button>
+                    </div>
+                  </br-item-content>
+                </br-item>
+              </br-list>
+            </div>
+          </br-expander-content>
+        </br-expander>
+      </div>
+
+    </br-card-content>
+  </br-card-expanded>
+
+</br-expansion-card>

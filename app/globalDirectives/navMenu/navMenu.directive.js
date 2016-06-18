@@ -8,13 +8,13 @@ function navMenuDirective() {
     restrict: 'E',
     templateUrl: 'globalDirectives/navMenu/navMenu.html',
     replace: true,
-    controller: ['$rootScope', 'navMenuService', 'authService', controller],
+    controller: ['$rootScope', 'navMenuService', 'authService', '$brSideContent', controller],
     controllerAs: 'vm'
   };
   return directive;
 
 
-  function controller($rootScope, navMenuService, authService) {
+  function controller($rootScope, navMenuService, authService, $brSideContent) {
     /* jshint validthis: true */
     var vm = this;
 
@@ -37,6 +37,8 @@ function navMenuDirective() {
       navMenuService.getMenu(undefined, function (data) {
         vm.menu = data;
       });
+
+      $brSideContent('navMenuSideContent').close();
     }
 
 

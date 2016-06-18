@@ -1,0 +1,58 @@
+<br-expansion-card>
+
+  <br-card-collapsed>
+    <div class="orgcard-title">Create Menu Item</div>
+    <div layout="row">
+      <div class="orgcard-hint"><b>category</b> {{vm.category.name}}</div>
+    </div>
+  </br-card-collapsed>
+
+
+
+  <br-card-expanded>
+    <br-subheader br-no-style>
+      <div class="card-header">
+        <div>
+          <h2>Create Menu Item</h2>
+          <div class="sub-h2"><b>category</b> {{vm.category.name}}</div>
+        </div>
+        <div flex></div>
+
+        <div layout="row">
+          <br-button class="br-warn br-raised" ng-click="vm.cancel()">Cancel</br-button>
+          <br-button class="br-accent br-raised" ng-click="vm.save()" ng-disabled="form.$invalid">Save</br-button>
+        </div>
+      </div>
+    </br-subheader>
+
+
+    <br-card-content>
+      <form name="form">
+        <div layout="row" layout-wrap>
+          <br-input flex class="br-fill">
+            <label>Name</label>
+            <input name="name" ng-model="vm.menuItem.name" placeholder="Enter Name" required />
+            <div ng-messages="form.name.$error">
+              <div ng-message="required">Name Required</div>
+            </div>
+          </br-input>
+
+          <br-input flex class="br-fill">
+            <label>Price</label>
+            <input type="number" name="price" ng-model="vm.menuItem.price" placeholder="Enter Price" required />
+            <div ng-messages="form.price.$error">
+              <div ng-message="required">Name Required</div>
+            </div>
+          </br-input>
+        </div>
+
+
+        <br-input flex class="br-fill">
+          <label>Description</label>
+          <textarea name="description" ng-model="vm.menuItem.description" placeholder="Enter Description"></textarea>
+        </br-input>
+      </form>
+    </br-card-content>
+  </br-card-expanded>
+
+</br-expansion-card>

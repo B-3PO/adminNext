@@ -17,7 +17,7 @@ function VenuesController($brExpansionCardManager, venuesCreate, organizationSco
     if (venuesCreate === true && organizationsId !== undefined) {
       cardManager.add('venuesCreate', {organizationsId: organizationsId});
     } else if (venuesCreate === false && venuesId !== undefined) {
-        cardManager.add('venuesEdit', {venuesId: venuesId});
+        cardManager.add('venuesEdit', {venuesId: venuesId, organizationsId: organizationsId});
     } else if (venuesCreate === false && organizationsId !== undefined) {
       cardManager.add('venuesList', {organizationsId: organizationsId});
     } else {
@@ -30,7 +30,7 @@ function VenuesController($brExpansionCardManager, venuesCreate, organizationSco
     if (venuesCreate === true && organizationsId !== undefined) {
       cardManager.add('venuesCreate', {organizationsId: organizationsId});
     } else if (venuesCreate === false && venuesId !== undefined) {
-      cardManager.add('venuesEdit', {venuesId: venuesId});
+      cardManager.add('venuesEdit', {venuesId: venuesId, organizationsId: organizationsId});
     } else if (venuesCreate === false && organizationsId !== undefined) {
       cardManager.add('venuesList', {organizationsId: organizationsId});
     }

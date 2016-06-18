@@ -10,7 +10,9 @@ angular
 
     'adminNext.organizations',
     'adminNext.venues',
-    'adminNext.locations'
+    'adminNext.locations',
+    'adminNext.menus',
+    'adminNext.menuItems'
   ])
   .config(configApp);
 

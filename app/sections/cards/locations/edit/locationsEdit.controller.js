@@ -3,8 +3,8 @@ angular
   .controller('LocationsEditController', LocationsEditController);
 
 
-LocationsEditController.$inject = ['$scope', '$brExpansionCardManager', 'organizationsService', 'locationsId'];
-function LocationsEditController($scope, $brExpansionCardManager, organizationsService, locationsId) {
+LocationsEditController.$inject = ['$scope', '$brExpansionCardManager', 'organizationsService', 'watchForEdit', 'locationsId'];
+function LocationsEditController($scope, $brExpansionCardManager, organizationsService, watchForEdit, locationsId) {
   var vm = this;
 
   organizationsService.registerScope($scope, [vm]);
@@ -21,11 +21,26 @@ function LocationsEditController($scope, $brExpansionCardManager, organizationsS
   vm.cancel = cancel;
 
 
+  function checkChanges() {
+    vm.edited = false;
+    watchForEdit.watch(vm, 'location', $scope, function () {
+      vm.edited = true;
+    });
+  }
+  checkChanges();
+
+
   function save() {
     organizationsService.applyChanges();
+    if ($scope.$card.topCard === false) {
+      $scope.$card.remove();
+    } else { checkChanges(); }
   }
 
   function cancel() {
-    $scope.$card.remove();
+    organizationsService.removeChanges();
+    if ($scope.$card.topCard === false) {
+      $scope.$card.remove();
+    } else { checkChanges(); }
   }
 }

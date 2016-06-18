@@ -12,6 +12,7 @@ exports.get = function (structure, id, callback) {
   queryBuilder.select(structure, id);
   addJoins(structure.relationships, structure, queryBuilder);
   var query = queryBuilder.build();
+  
   runQuery(query, function (error, rows) {
     if (error !== undefined) {
       callback(500);
@@ -163,7 +164,11 @@ function buildData(structure, data, toMany) {
       }
 
       // run conversion on data based on type
-      set[descriptor.type][descriptor.attr.name] = dataTypes.convert[descriptor.attr.dataType](popped[key]);
+      if (descriptor.attr.format !== undefined) {
+        set[descriptor.type][descriptor.attr.name] = descriptor.attr.format(popped[key]);
+      } else {
+        set[descriptor.type][descriptor.attr.name] = dataTypes.convert[descriptor.attr.dataType](popped[key]);
+      }
       key = keys.pop();
     }
 

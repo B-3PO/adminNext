@@ -1,0 +1,44 @@
+<br-expansion-card>
+
+  <br-card-collapsed>
+    <div class="orgcard-title">Create Modifier</div>
+    <div layout="row">
+      <div class="orgcard-hint"><b>menu item</b> {{vm.menuItem.name}}</div>
+    </div>
+  </br-card-collapsed>
+
+
+
+  <br-card-expanded>
+    <br-subheader br-no-style>
+      <div class="card-header">
+        <div>
+          <h2>Create Modifier</h2>
+          <div class="sub-h2"><b><b>menu item</b> {{vm.menuItem.name}}</div>
+        </div>
+        <div flex></div>
+
+        <div layout="row">
+          <br-button class="br-warn br-raised" ng-click="vm.cancel()">Cancel</br-button>
+          <br-button class="br-accent br-raised" ng-click="vm.save()" ng-disabled="form.$invalid">Save</br-button>
+        </div>
+      </div>
+    </br-subheader>
+
+
+    <br-card-content>
+      <form name="form">
+        <div layout="row" layout-wrap>
+          <br-input flex class="br-fill">
+            <label>Name</label>
+            <input name="name" ng-model="vm.modifier.name" placeholder="Enter Name" required />
+            <div ng-messages="form.name.$error">
+              <div ng-message="required">Name Required</div>
+            </div>
+          </br-input>
+        </div>
+      </form>
+    </br-card-content>
+  </br-card-expanded>
+
+</br-expansion-card>

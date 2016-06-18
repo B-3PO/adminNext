@@ -11,7 +11,7 @@ function VenuesListController($scope, $brExpansionCardManager, organizationsServ
   if (organizationsId !== undefined) {
     organizationsService.bind(vm, 'organization', 'organizations', organizationsId);
   } else {
-    vm.organization = {}
+    vm.organization = {};
     organizationsService.bind(vm.organization, 'venues', 'venues');
   }
   organizationsService.get();
@@ -26,6 +26,6 @@ function VenuesListController($scope, $brExpansionCardManager, organizationsServ
   }
 
   function editVenue(id) {
-    $brExpansionCardManager('cardManager').add('venuesEdit', {venuesId: id});
+    $brExpansionCardManager('cardManager').add('venuesEdit', {venuesId: id, organizationsId: organizationsId});
   }
 }

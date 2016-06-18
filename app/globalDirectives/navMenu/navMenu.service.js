@@ -2,7 +2,7 @@ angular
   .module('adminNext')
   .factory('navMenuService', navMenuService);
 
-var ICONS_BY_TYPE = {organizations: 'organization', venues: 'venue', locations: 'location'}
+var ICONS_BY_TYPE = {organizations: 'organization', venues: 'venue', locations: 'location'};
 var SCOPE_RANKING = ['admin', 'organizations', 'venues', 'locations', 'menus', 'menuItems'];
 
 

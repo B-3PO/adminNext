@@ -1,0 +1,50 @@
+<br-expansion-card>
+
+  <br-card-collapsed>
+    <div class="orgcard-title">Menus List</div>
+    <div layout="row">
+      <div class="orgcard-hint"><b>{{vm.ownerType}}</b> {{vm.owner.name}}</div>
+    </div>
+  </br-card-collapsed>
+
+
+
+
+
+  <br-card-expanded>
+    <br-subheader br-no-style>
+      <div class="card-header">
+        <div>
+          <h2>Menus</h2>
+          <div class="sub-h2"><b>{{vm.ownerType}}</b> {{vm.owner.name}}</div>
+        </div>
+      </div>
+    </br-subheader>
+
+
+    <br-card-content>
+      <div layout="row" class="filter-bar">
+        <br-icon br-font-icon="search" style="line-height: 53px; padding-left: 12px; "></br-icon>
+        <input flex type="search" br-no-style ng-model="vm.filter" placeholder="Search..." />
+
+        <br-button class="br-accent br-raised" ng-click="vm.createMenu();" ng-disabled="vm.loaded === false"><br-icon br-font-icon="add"></br-icon>Menu</br-button>
+      </div>
+
+
+      <br-list>
+        <br-item ng-repeat="menu in vm.owner.menus | filter:vm.filter">
+          <br-item-content class="br-fill">
+            <div layout="row" layout-align="start center">
+              <div class="br-item-title">{{menu.name}}</div>
+              <div flex></div>
+              <br-button class="br-primary" ng-click="vm.editMenu(menu.id)"><br-icon br-font-icon="edit"></br-icon>Edit</br-button>
+            </div>
+          </br-item-content>
+        </br-item>
+      </br-list>
+    </br-card-content>
+  </br-card-expanded>
+
+
+
+</br-expansion-card>
