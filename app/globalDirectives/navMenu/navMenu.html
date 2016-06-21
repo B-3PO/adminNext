@@ -28,7 +28,8 @@
     <br-expander ng-if="item.links !== undefined" br-open="item.links.length < 5">
       <br-expander-header>
         <br-icon ng-if="item.icon" br-font-icon="{{item.icon}}"></br-icon>
-        {{item.label}} ({{item.links.length}})
+        <span>{{item.label}} ({{item.links.length}})</span>
+        <br-expander-icon></br-expander-icon>
       </br-expander-header>
 
       <br-expander-content>

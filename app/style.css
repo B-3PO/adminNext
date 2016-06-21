@@ -36,7 +36,7 @@
   background: transparent;
 }
 
-.filter-bar .br-button {
+.filter-bar .br-button:not(.br-circle) {
   margin: 0;
   border-radius: 0;
 }
@@ -115,4 +115,21 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.collapsed-nested-header {
+  font-size: 18px;
+  font-weight: 500;
+  padding-right: 54px;
+  color: #444;
+  line-height: 40px;
+}
+
+.collapsed-nested-info {
+  font-size: 13px;
+  color: #444;
+  line-height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

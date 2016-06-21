@@ -28,6 +28,13 @@
 
     <br-card-content>
       <form name="form">
+        <br-select>
+          <label>Category</label>
+          <br-select-menu name="type" ng-model="vm.selectedCategory" placeholder="Select Category" required>
+            <br-option ng-value="category.id" ng-repeat="category in vm.menu.categories">{{category.name}}</br-option>
+          </br-select-menu>
+        </br-select>
+
         <div layout="row" layout-wrap>
           <br-input flex class="br-fill">
             <label>Name</label>

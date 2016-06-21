@@ -31,32 +31,31 @@ function MenusEditController($scope, $brExpansionCardManager, organizationsServi
     'preorder',
     'Merchandise'
   ];
-  vm.save = save;
-  vm.cancel = cancel;
+  vm.saveEdit = saveEdit;
+  vm.cancelEdit = cancelEdit;
   vm.createMenuItem = createMenuItem;
   vm.editMenuItem = editMenuItem;
   vm.createCategory = createCategory;
   vm.editCategory = editCategory;
   vm.categoriesOpen = true;
+  vm.remove = function () {
+    $scope.$card.remove();
+  };
 
 
-  function save() {
+  function saveEdit() {
     organizationsService.applyChanges();
-    if ($scope.$card.topCard === false) {
-      $scope.$card.remove();
-    } else { checkChanges(); }
+    checkChanges();
   }
 
-  function cancel() {
+  function cancelEdit() {
     organizationsService.removeChanges();
-    if ($scope.$card.topCard === false) {
-      $scope.$card.remove();
-    } else { checkChanges(); }
+    checkChanges();
   }
 
 
   function createMenuItem(id) {
-    $brExpansionCardManager('cardManager').add('menuItemsCreate', {categoriesId: id});
+    $brExpansionCardManager('cardManager').add('menuItemsCreate', {menusId: menusId, categoriesId: id});
   }
 
   function editMenuItem(categoriesId, menusItemId) {

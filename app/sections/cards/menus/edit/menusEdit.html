@@ -17,48 +17,76 @@
           <div class="sub-h2"><b>{{vm.ownerType}}</b> {{vm.owner.name}}</div>
         </div>
         <div flex></div>
-
-        <div ng-if="vm.edited" layout="row">
-          <br-button class="br-warn br-raised" ng-click="vm.cancel()">Cancel Changes</br-button>
-          <br-button class="br-accent br-raised" ng-click="vm.save()" ng-disabled="form.$invalid">Save</br-button>
-        </div>
-
-        <div ng-if="!vm.edited && $card.topCard === false" layout="row">
-          <br-button class="br-primary" ng-click="vm.cancel()">Done<br-icon br-font-icon="close"></br-icon></br-button>
-        </div>
+        <br-button class="br-circle br-small" ng-click="vm.remove()" ng-disabled="vm.edited"><br-icon br-font-icon="close"></br-icon></br-button>
       </div>
     </br-subheader>
 
 
-    <br-card-content>
-      <form name="form">
-        <div layout="row" layout-wrap>
-          <br-input flex class="br-fill">
-            <label>Menu Name</label>
-            <input name="name" ng-model="vm.menu.name" placeholder="Enter Name" required />
-            <div ng-messages="form.name.$error">
-              <div ng-message="required">Name Required</div>
-            </div>
-          </br-input>
 
-          <br-select flex>
-            <label>Type</label>
-            <br-select-menu name="type" ng-model="vm.menu.type" placeholder="Select Type" required>
-              <br-option ng-value="type" ng-repeat="type in vm.types">{{type}}</br-option>
-            </br-select-menu>
-          </br-select>
+
+    <!-- Settings Expansion Card -->
+
+    <br-expansion-card>
+      <br-card-collapsed>
+        <div layout="row">
+          <div class="collapsed-nested-header">Settings</div>
+          <div flex class="collapsed-nested-info">Edit menu settings (name, type)</div>
+          <br-button class="br-circle br-small br-primary br-no-margin"><br-icon br-font-icon="edit"></br-icon></br-button>
         </div>
-      </form>
+      </br-card-collapsed>
+
+      <br-card-expanded>
+        <br-card-content>
+          <div layout="row">
+            <h3>Settings</h3>
+            <div flex></div>
+            <br-button class="br-warn br-raised" ng-click="vm.cancelEdit(); $card.collapse();">Cancel Changes</br-button>
+            <br-button class="br-accent br-raised" ng-click="vm.saveEdit(); $card.collapse();" ng-disabled="form.$invalid || !vm.edited">Save</br-button>
+          </div>
+
+          <form name="form">
+            <div layout="row" layout-wrap>
+              <br-input flex class="br-fill">
+                <label>Menu Name</label>
+                <input name="name" ng-model="vm.menu.name" placeholder="Enter Name" required />
+                <div ng-messages="form.name.$error">
+                  <div ng-message="required">Name Required</div>
+                </div>
+              </br-input>
+
+              <br-select flex>
+                <label>Type</label>
+                <br-select-menu name="type" ng-model="vm.menu.type" placeholder="Select Type" required>
+                  <br-option ng-value="type" ng-repeat="type in vm.types">{{type}}</br-option>
+                </br-select-menu>
+              </br-select>
+            </div>
+          </form>
+        </br-card-content>
+      </br-card-expanded>
+    </br-expansion-card>
 
 
-      <h4>Menu Items</h4>
 
+
+    <br-card-content>
       <div layout="row" class="filter-bar">
         <br-icon br-font-icon="search" style="line-height: 53px; padding-left: 12px; "></br-icon>
         <input flex type="search" br-no-style ng-model="vm.filter" placeholder="Search..." />
 
-        <br-button ng-disabled="vm.loaded === false" ng-click="vm.categoriesOpen = !vm.categoriesOpen">{{vm.categoriesOpen ? 'Close' : 'Open'}}</br-button>
-        <br-button class="br-accent" ng-click="vm.createCategory();" ng-disabled="vm.loaded === false"><br-icon br-font-icon="add"></br-icon>Category</br-button>
+        <br-button ng-if="vm.menu.categories.length > 0" ng-disabled="vm.loaded === false" ng-click="vm.categoriesOpen = !vm.categoriesOpen">{{vm.categoriesOpen ? 'Callapse All' : 'Expand All'}}</br-button>
+
+        <br-menu br-position-mode="right target">
+          <br-button class="br-circle br-small" ng-click="$brOpenMenu($event)"><br-icon br-font-icon="more_vert"></br-icon></br-button>
+          <br-menu-content>
+            <br-menu-item>
+              <br-button ng-click="vm.createCategory()"><br-icon br-font-icon="add" br-size="20"></br-icon>Category</br-button>
+            </br-menu-item>
+            <br-menu-item>
+              <br-button ng-click="vm.createMenuItem()"><br-icon br-font-icon="add" br-size="20"></br-icon>Menu Item</br-button>
+            </br-menu-item>
+          </br-menu-content>
+        </br-menu>
       </div>
 
 
@@ -66,11 +94,22 @@
       <div>
         <br-expander ng-if="!vm.filter || (category.menuItems | filter:vm.filter).length" br-open="vm.categoriesOpen && category.menuItems.length < 6" ng-repeat="category in vm.menu.categories | filter:vm.filter | orderBy:'order'">
           <br-expander-header style="background: #d9e6f4;">
+            <br-expander-icon></br-expander-icon>
             <div layout="row" layout-fill>
               <br-icon style="padding: 13px;" br-font-icon="{{category.type === 'beverage' ? 'drink' : category.type === 'alcohol' ? 'alcohol' : 'menu'}}"></br-icon>
               <div class="br-item-title" style="padding-left: 12px;" flex>{{category.name}} <span class="br-item-info">({{category.menuItems.length}})</span></div>
-              <br-button class="br-accent" ng-click="vm.createMenuItem(category.id)"><br-icon br-font-icon="add"></br-icon>Item</br-button>
-              <br-button ng-click="vm.editCategory(category.id)"><br-icon br-font-icon="edit"></br-icon>Edit</br-button>
+
+              <br-menu br-position-mode="right target">
+                <br-button class="br-circle br-small" ng-click="$brOpenMenu($event)"><br-icon br-font-icon="more_vert"></br-icon></br-button>
+                <br-menu-content>
+                  <br-menu-item>
+                    <br-button ng-click="vm.createMenuItem(category.id)"><br-icon br-font-icon="add" br-size="20"></br-icon>Item</br-button>
+                  </br-menu-item>
+                  <br-menu-item>
+                    <br-button ng-click="vm.editCategory(category.id)"><br-icon br-font-icon="edit" br-size="20"></br-icon>Category</br-button>
+                  </br-menu-item>
+                </br-menu-content>
+              </br-menu>
             </div>
           </br-expander-header>
 
@@ -87,7 +126,19 @@
                         </div>
                       </div>
                       <div flex></div>
-                      <br-button class="br-primary" ng-click="vm.editMenuItem(category.id, menuItem.id)"><br-icon br-font-icon="edit"></br-icon>Edit</br-button>
+
+                      <br-menu br-position-mode="right target">
+                        <br-button class="br-circle br-small" ng-click="$brOpenMenu($event)"><br-icon br-font-icon="more_vert"></br-icon></br-button>
+                        <br-menu-content>
+                          <br-menu-item>
+                            <br-button ng-click="vm.editMenuItem(category.id, menuItem.id)"><br-icon br-font-icon="edit" br-size="20"></br-icon>Edit</br-button>
+                          </br-menu-item>
+                          <br-menu-item>
+                            <br-button><br-icon br-font-icon="close" br-size="20"></br-icon>Delete</br-button>
+                          </br-menu-item>
+                        </br-menu-content>
+                      </br-menu>
+
                     </div>
                   </br-item-content>
                 </br-item>
